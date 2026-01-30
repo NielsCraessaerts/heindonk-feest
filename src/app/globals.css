@@ -1,26 +1,41 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@config "../../tailwind.config.ts";
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: 214 61% 36%;
+    --color-secondary: 26 80% 54%;
+    --color-accent: 36 100% 88%;
+    --color-bg: 28 78% 92%;
+    --color-surface: 35 100% 96%;
+    --color-text: 0 0% 100%;
+    --color-textdark: 220 43% 18%;
+    --color-textlight: 214 18% 45%;
+    --color-muted: 25 44% 78%;
+    --color-jstackgradient: linear-gradient(135deg, hsl(26 80% 54%) 0%, hsl(34 94% 70%) 45%, hsl(35 100% 92%) 100%);
+    --color-jstackgradient-vertical: linear-gradient(180deg, hsl(26 80% 54%) 0%, hsl(34 94% 70%) 55%, hsl(35 100% 92%) 100%);
+    --poster-stripes: repeating-linear-gradient(155deg, hsla(27, 80%, 70%, 0.35) 0 28px, hsla(35, 100%, 92%, 0.35) 28px 64px);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background-color: hsl(var(--color-bg));
+    color: hsl(var(--color-textdark));
+    background-image: var(--poster-stripes), var(--color-jstackgradient);
+    background-attachment: fixed;
+    font-family: var(--font-libre-baskerville), serif;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+}
+@layer utilities {
+  .bg-jstackgradient {
+    background-image: var(--color-jstackgradient);
+  }
+  .bg-jstackgradient-vertical {
+    background-image: var(--color-jstackgradient-vertical);
+  }
+  .bg-poster-stripes {
+    background-image: var(--poster-stripes);
+  }
+
 }
