@@ -5,7 +5,6 @@ import Header from "@/components/custom/header";
 import { font } from "@/styles/font";
 import SiteScripts from "@/components/custom/site-scripts";
 
-
 const archivo = Archivo({
     variable: "--font-archivo",
     subsets: ["latin"],
@@ -25,36 +24,36 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://heindonk-feest.be'),
+    metadataBase: new URL("https://heindonk-feest.be"),
     title: {
-        default: 'Heindonk-Feest',
-        template: '%s - JSTACK'
+        default: "Heindonk Feest",
+        template: "%s - Heindonk Feest",
     },
-    description: 'Wij creëren innovatieve digitale oplossingen die een positieve impact hebben op de werking van bedrijven en het dagelijkse leven van mensen.',
-    keywords: ['softwareontwikkeling', 'software op maat', 'digitale strategie', 'webdevelopment', '4xO methode', 'custom software'],
-    authors: [{ name: 'JSTACK', url: 'https://jstack.eu' }],
-    creator: 'JSTACK',
-    publisher: 'JSTACK',
+    description: "Heindonk Feest: drie dagen sport, muziek en plezier met foodtrucks en live optredens.",
+    keywords: ["Heindonk Feest", "festival", "sport", "muziek", "foodtrucks"],
+    authors: [{ name: "Heindonk Feest", url: "https://heindonk-feest.be" }],
+    creator: "Heindonk Feest",
+    publisher: "Heindonk Feest",
     openGraph: {
-        type: 'website',
-        locale: 'nl',
-        url: 'https://jstack.eu',
-        title: 'JSTACK - Improving business digitally',
-        description: 'Wij creëren innovatieve digitale oplossingen die een positieve impact hebben op de werking van bedrijven en het dagelijkse leven van mensen.',
-        siteName: 'JSTACK',
+        type: "website",
+        locale: "nl",
+        url: "https://heindonk-feest.be",
+        title: "Heindonk Feest",
+        description: "Heindonk Feest: drie dagen sport, muziek en plezier met foodtrucks en live optredens.",
+        siteName: "Heindonk Feest",
         images: [
             {
-                url: '/jstackicon.png',
+                url: "/favicon.ico",
                 width: 320,
                 height: 320,
-                alt: 'JSTACK - Improving business digitally',
+                alt: "Heindonk Feest",
             },
         ],
     },
     twitter: {
-        card: 'summary_large_image',
-        title: 'JSTACK - Improving business digitally',
-        description: 'Wij creëren innovatieve digitale oplossingen die een positieve impact hebben op de werking van bedrijven en het dagelijkse leven van mensen.'
+        card: "summary_large_image",
+        title: "Heindonk Feest",
+        description: "Heindonk Feest: drie dagen sport, muziek en plezier met foodtrucks en live optredens.",
     },
     robots: {
         index: true,
@@ -62,32 +61,29 @@ export const metadata: Metadata = {
         googleBot: {
             index: true,
             follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
         },
     },
-    category: 'Software Development',
+    category: "Festival",
     icons: {
-        icon: '/favicon.ico',
-    }
-}
+        icon: "/favicon.ico",
+    },
+};
 
 export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
+    children,
+}: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
         <html lang="en">
-        <body
-            className={`${font.variable} ${oswald.variable}`}
-        >
-        <Header/>
-        {children}
-        <SiteScripts />
-      
-        </body>
+            <body className={`${font.variable} ${oswald.variable}`}>
+                <Header />
+                {children}
+                <SiteScripts />
+            </body>
         </html>
     );
 }
