@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#FBE7D2"/>
+  <rect y="0" width="1200" height="800" fill="none" stroke="#E6A56E" stroke-width="18" rx="32" />
+  <g fill="#2E5FA7" font-family="Georgia, serif" font-weight="700">
+    <text x="120" y="240" font-size="96" letter-spacing="8">HEINDONK</text>
+    <text x="120" y="360" font-size="140">Feest</text>
+  </g>
+  <g fill="#E58A3D" font-family="Georgia, serif" font-weight="700">
+    <text x="720" y="430" font-size="80">1-2-3</text>
+    <text x="720" y="520" font-size="100">MEI</text>
+    <text x="820" y="580" font-size="42">’26</text>
+  </g>
+  <rect x="690" y="360" width="420" height="260" rx="130" fill="white" stroke="#D8D8D8" stroke-width="6"/>
+  <circle cx="1060" cy="380" r="12" fill="#E58A3D"/>
+  <rect x="740" y="560" width="140" height="10" rx="5" fill="#2E5FA7"/>
+</svg>

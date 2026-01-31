@@ -1,7 +1,7 @@
-
-
-import SiteHeader from "@/components/custom/header";
+import MainHeading from "@/components/custom/headings/main-heading";
 
 export default function Home() {
-    return 0
+    return (
+        <MainHeading />
+    );
 }

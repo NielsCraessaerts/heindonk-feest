@@ -18,7 +18,7 @@ export default function Header() {
 
                 {/* CENTER LOGO */}
                 <div className="flex justify-center">
-                    <a href="/homepage" aria-label="Naar de homepage">
+                    <a href="/" aria-label="Naar de homepage">
                         <img
                             src="/images/logos/logo_Heindonk_feest.png"
                             alt="Heindonk Feest logo"

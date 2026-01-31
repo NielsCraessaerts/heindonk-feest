@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#F5E9DE"/>
+  <rect x="30" y="30" width="740" height="440" fill="none" stroke="#E0B38A" stroke-width="12" rx="28"/>
+  <g fill="#2E5FA7" font-family="Georgia, serif" font-weight="700">
+    <text x="60" y="140" font-size="48" letter-spacing="6">ARTIEST</text>
+    <text x="60" y="210" font-size="32" letter-spacing="4">PLAATSHOUDER</text>
+  </g>
+  <g fill="#E58A3D" font-family="Georgia, serif" font-weight="700">
+    <text x="60" y="320" font-size="28">LIVE</text>
+    <text x="60" y="360" font-size="28">SET</text>
+  </g>
+</svg>
