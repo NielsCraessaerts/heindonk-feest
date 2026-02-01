@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-export const font = localFont({
+export const libre = localFont({
   src: [
     {
       path: "../../public/fonts/LibreBaskerville-Regular.woff2",
@@ -19,5 +19,17 @@ export const font = localFont({
     },
   ],
   variable: "--font-libre-baskerville",
+  display: "swap",
+});
+
+export const lobster = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Lobster-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-lobster",
   display: "swap",
 });

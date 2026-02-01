@@ -1,5 +1,5 @@
-import PageRenderer from "@/components/custom/poster/page-renderer";
+import Construction from "@/components/custom/construction";
 
 export default function SponsorpakkettenPage() {
-  return <PageRenderer slug="/sponsorpakketten" />;
+  return <Construction />;
 }

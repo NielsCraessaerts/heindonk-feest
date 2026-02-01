@@ -13,8 +13,8 @@ export default function MainHeading() {
     <section ref={rootRef} className="relative overflow-hidden">
       {/* Background (sunset poster wash + diagonal stripes) */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(255,245,230,0.9),rgba(255,214,170,0.55)_38%,rgba(236,150,85,0.35)_70%,rgba(210,120,70,0.25)_100%)]" />
-      <div className="absolute inset-0 opacity-[0.55] [background-image:repeating-linear-gradient(140deg,rgba(255,160,90,0.45)_0px,rgba(255,160,90,0.45)_42px,rgba(255,255,255,0.0)_42px,rgba(255,255,255,0.0)_96px)]" />
-      <div className="absolute inset-0 bg-white/35 backdrop-blur-[1px]" />
+      <div className="absolute inset-0 opacity-[0.55] [background-image:repeating-linear-gradient(135deg,rgba(255,160,90,0.45)_0px,rgba(255,160,90,0.45)_42px,rgba(255,255,255,0.0)_42px,rgba(255,255,255,0.0)_96px)]" />
+
 
       {/* grain */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.10] [background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22120%22 height=%22120%22 filter=%22url(%23n)%22 opacity=%220.6%22/%3E%3C/svg%3E')]" />
@@ -73,24 +73,23 @@ export default function MainHeading() {
                 />
               </div>
 
-              {/* DATE BADGE (clean card) */}
-              <div className="relative">
+              {/* DATE BADGE (blue filled circle) */}
+              <div className="relative pt-[20px]">
                 <div
-                  className="absolute inset-0 -z-10 translate-y-2 rounded-[28px] bg-black/10 blur-2xl"
+                  className="absolute inset-0 -z-10 translate-y-3 rounded-full bg-blue-500/20 blur-2xl"
                   aria-hidden="true"
                 />
 
-                <div className="relative h-[220px] w-[240px] rounded-[28px] bg-[linear-gradient(160deg,#FFFFFF_0%,#FFF6EE_55%,#FFE8D6_100%)] shadow-[0_18px_40px_rgba(0,0,0,0.14)] ring-1 ring-secondary/20 md:h-[250px] md:w-[280px]">
-                  <div className="pointer-events-none absolute inset-3 rounded-[22px] ring-1 ring-secondary/30" />
-                  <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.8),rgba(255,255,255,0)_55%)]" />
+                <div className="relative h-[200px] w-[260px] rounded-[999px] bg-[radial-gradient(circle_at_28%_30%,rgba(255,255,255,0.92),rgba(255,255,255,0)_58%),linear-gradient(165deg,#FFF7F0_0%,#FFF0E4_52%,#F6D9C4_100%)] md:h-[230px] md:w-[300px]">
+                  <div className="pointer-events-none absolute inset-[6px] rounded-[999px] bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.85),rgba(255,255,255,0)_62%)]" />
                   <div className="absolute inset-0 flex flex-col items-center justify-center text-primary">
-                    <div className="text-4xl font-bold leading-none tracking-[0.14em] text-secondary">
+                    <div className="text-4xl font-bold leading-none tracking-[0.12em] text-[#D9823B]">
                       1–2–3
                     </div>
-                    <div className="mt-3 font-heading text-5xl font-bold leading-none tracking-[0.06em] text-primary">
+                    <div className="mt-3 font-heading text-5xl font-bold leading-none tracking-[0.06em] text-[#D9823B]">
                       MEI
                     </div>
-                    <div className="mt-3 text-xs font-semibold tracking-[0.34em] text-textdark/70">
+                    <div className="mt-3 text-xs font-semibold tracking-[0.34em] text-[#D98A52]">
                       ’26
                     </div>
                   </div>

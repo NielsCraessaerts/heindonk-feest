@@ -1,27 +1,11 @@
 import type { Metadata } from "next";
-import { Archivo, Signika, Oswald } from "next/font/google";
+
 import "./globals.css";
 import Header from "@/components/custom/header";
-import { font } from "@/styles/font";
+import { libre, lobster } from "@/styles/font";
 import SiteScripts from "@/components/custom/site-scripts";
 
-const archivo = Archivo({
-    variable: "--font-archivo",
-    subsets: ["latin"],
-    display: "swap",
-});
 
-const signika = Signika({
-    variable: "--font-signika",
-    subsets: ["latin"],
-    display: "swap",
-});
-
-const oswald = Oswald({
-    variable: "--font-oswald",
-    subsets: ["latin"],
-    display: "swap",
-});
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://heindonk-feest.be"),
@@ -79,7 +63,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${font.variable} ${oswald.variable}`}>
+            <body className={`${libre.variable} ${lobster.variable}`}>
                 <Header />
                 {children}
                 <SiteScripts />
