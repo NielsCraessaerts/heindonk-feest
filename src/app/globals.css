@@ -74,4 +74,22 @@
   .summary-cta {
     margin-top: auto;
   }
+
+  .summary-anim .swiper-pagination {
+    position: static;
+    margin-top: 28px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .summary-anim .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+  }
+
+  .summary-anim .swiper-pagination-bullet-active {
+    background: rgba(255, 255, 255, 1);
+  }
 }
