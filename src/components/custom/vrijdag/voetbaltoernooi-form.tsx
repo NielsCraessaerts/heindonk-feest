@@ -12,7 +12,6 @@ const labelClassName =
 const cardClassName =
   'relative rounded-[32px] border border-secondary/25 bg-white/80 shadow-[0_70px_140px_-110px_rgba(0,0,0,0.6)] backdrop-blur';
 
-// ✅ max-width wrapper for fields (mobile), normal width on md+
 const fieldWrapClassName =
   'min-w-0 max-w-[520px] md:max-w-none justify-self-center md:justify-self-stretch';
 
@@ -85,12 +84,6 @@ export default function VoetbaltoernooiForm() {
       <div className='grid min-w-0 gap-6 lg:grid-cols-[1.25fr_0.75fr]'>
         {/* FORM CARD */}
         <div className={`${cardClassName} block-anim delay-1 min-w-0`}>
-          {/* background clipped, content niet */}
-          <div className='pointer-events-none absolute inset-0 overflow-hidden rounded-[32px]'>
-            <div className='absolute inset-0 bg-[radial-gradient(circle_at_12%_10%,rgba(255,235,210,0.75),rgba(255,255,255,0)_55%),radial-gradient(circle_at_85%_5%,rgba(120,170,255,0.2),rgba(255,255,255,0)_50%)]' />
-            <div className='absolute inset-0 opacity-[0.28] [background-image:repeating-linear-gradient(135deg,rgba(255,210,180,0.45)_0px,rgba(255,210,180,0.45)_36px,rgba(255,255,255,0)_36px,rgba(255,255,255,0)_84px)]' />
-          </div>
-
           <div className='relative p-6 sm:p-8'>
             <div className='flex items-end justify-between gap-6'>
               <div className='min-w-0'>

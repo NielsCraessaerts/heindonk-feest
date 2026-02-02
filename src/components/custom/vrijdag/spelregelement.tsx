@@ -3,7 +3,7 @@ export default function SpelreglementSection() {
     <section className='relative mx-auto w-full max-w-6xl overflow-hidden px-6 pb-20 pt-8 sm:pt-10'>
       {/* Samenvatting background (full-bleed) */}
 
-      <div className='relative rounded-[32px] border border-secondary/25 bg-white/85 p-6 shadow-[0_70px_140px_-110px_rgba(0,0,0,0.55)] backdrop-blur sm:p-8 block-anim delay-1'>
+      <div className='block-anim delay-1 relative rounded-[32px] border border-secondary/25 bg-white/85 p-6 backdrop-blur sm:p-8'>
         <div className='flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between'>
           <div>
             <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-[#2B58B2]/70'>
@@ -38,7 +38,7 @@ export default function SpelreglementSection() {
           ))}
         </ul>
 
-        <div className='mt-8 rounded-2xl border border-secondary/15 bg-[#2B58B2]/5 p-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#2B58B2]/80 sm:p-5 block-anim delay-3'>
+        <div className='block-anim delay-3 mt-8 rounded-2xl border border-secondary/15 bg-[#2B58B2]/5 p-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#2B58B2]/80 sm:p-5'>
           Voor alle details, uitzonderingen en administratie:{' '}
           <a
             href='/files/Spelreglement%20VKH-tornooi.pdf'

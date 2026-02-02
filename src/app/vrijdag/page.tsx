@@ -1,5 +1,6 @@
 import VoetbaltoernooiForm from '@/components/custom/vrijdag/voetbaltoernooi-form';
 import SpelreglementSection from '@/components/custom/vrijdag/spelregelement';
+import ExtraInfoVrijdag from '@/components/custom/vrijdag/extra-info';
 
 export default function VrijdagPage() {
   return (
@@ -12,6 +13,7 @@ export default function VrijdagPage() {
       <div className='relative z-10'>
         <VoetbaltoernooiForm />
         <SpelreglementSection />
+        <ExtraInfoVrijdag />
       </div>
     </main>
   );
