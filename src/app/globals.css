@@ -78,7 +78,6 @@
   .summary-anim .swiper-pagination {
     position: static;
     margin-top: 28px;
-    padding-bottom: 24px;
     display: flex;
     justify-content: center;
     gap: 8px;
@@ -91,5 +90,34 @@
 
   .summary-anim .swiper-pagination-bullet-active {
     background: rgba(255, 255, 255, 1);
+  }
+}
+
+@layer utilities {
+  .block-anim {
+    animation: blockFadeUp 700ms ease both;
+  }
+
+  .block-anim.delay-1 {
+    animation-delay: 120ms;
+  }
+
+  .block-anim.delay-2 {
+    animation-delay: 240ms;
+  }
+
+  .block-anim.delay-3 {
+    animation-delay: 360ms;
+  }
+}
+
+@keyframes blockFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
