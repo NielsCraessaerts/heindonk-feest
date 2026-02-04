@@ -19,11 +19,8 @@ export default function FanfareFeestenSection() {
 
   return (
     <section className='relative text-white'>
-      <div className='mx-auto w-full max-w-6xl px-6 py-14 md:py-20'>
-        <div className='border-white/16 relative overflow-hidden rounded-[28px] border bg-[#1F4E97] shadow-[0_32px_90px_-60px_rgba(0,0,0,0.75)]'>
-          <div className='pointer-events-none absolute inset-0 opacity-35 [background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.10)_0px,rgba(255,255,255,0.10)_38px,rgba(255,255,255,0)_38px,rgba(255,255,255,0)_90px)]' />
-          <div className='pointer-events-none absolute -right-24 top-10 h-48 w-48 rotate-12 rounded-[40px] bg-[#F39B3A]/35 blur-2xl' />
-
+      <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
+        <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
             <p className='text-[11px] font-semibold uppercase tracking-[0.42em] text-white/80'>
               Zaterdag
@@ -41,19 +38,19 @@ export default function FanfareFeestenSection() {
 
             {/* Tijden als “sticker pills” */}
             <div className='mt-7 flex flex-wrap items-center justify-center gap-3'>
-              <div className='rounded-full bg-white px-5 py-2 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#1F4E97] shadow-[0_22px_55px_-42px_rgba(0,0,0,0.55)]'>
+              <div className='rounded-full bg-white px-5 py-2 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#1F4E97]'>
                 12:30
               </div>
               <div className='text-[10px] font-semibold uppercase tracking-[0.34em] text-white/75'>
                 tot
               </div>
-              <div className='rounded-full bg-[#F39B3A] px-5 py-2 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white shadow-[0_22px_55px_-42px_rgba(0,0,0,0.55)]'>
+              <div className='rounded-full bg-[#F39B3A] px-5 py-2 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white'>
                 17:30
               </div>
             </div>
           </div>
 
-          <div className='relative px-6 pb-10 sm:px-12'>
+          <div className='relative px-6 pb-6 sm:px-12'>
             <div className='grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch'>
               {/* Highlights links */}
               <div className='space-y-3'>
@@ -61,7 +58,7 @@ export default function FanfareFeestenSection() {
                   <div
                     key={item}
                     className={[
-                      'border-white/16 rounded-[22px] border bg-white/10 px-5 py-4 text-center',
+                      'rounded-[18px] bg-white/5 px-5 py-4 text-center',
                       idx % 2 === 0 ? 'rotate-[0.5deg]' : '-rotate-[0.5deg]',
                     ].join(' ')}
                   >
@@ -73,9 +70,7 @@ export default function FanfareFeestenSection() {
               </div>
 
               {/* Logo-strip rechts */}
-              <div className='relative overflow-hidden rounded-[22px] border border-[#F39B3A]/55 bg-[#F39B3A]/15 px-5 py-6 text-center'>
-                <div className='pointer-events-none absolute -left-6 -top-6 h-20 w-20 rounded-full bg-[#F39B3A]/35 blur-xl' />
-
+              <div className='relative overflow-hidden rounded-[18px] bg-[#F39B3A] px-5 py-6 text-center'>
                 <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85'>
                   Deelnemende fanfares
                 </p>
@@ -84,7 +79,7 @@ export default function FanfareFeestenSection() {
                   {fanfareLogos.map((f) => (
                     <div
                       key={f.name}
-                      className='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/25 bg-white/15'
+                      className='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15'
                       title={f.name}
                     >
                       {f.src ? (

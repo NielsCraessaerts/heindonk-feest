@@ -1,4 +1,4 @@
-export default function FamilienamiddagSection() {
+﻿export default function FamilienamiddagSection() {
   const activities = [
     'Groot springkasteel / run',
     'Levend voetbalspel',
@@ -7,11 +7,8 @@ export default function FamilienamiddagSection() {
 
   return (
     <section className='relative text-white'>
-      <div className='mx-auto w-full max-w-6xl px-6 py-14 md:py-20'>
-        <div className='border-white/16 relative overflow-hidden rounded-[28px] border bg-[#1F4E97] shadow-[0_32px_90px_-60px_rgba(0,0,0,0.75)]'>
-          <div className='pointer-events-none absolute inset-0 opacity-35 [background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.1)_0px,rgba(255,255,255,0.1)_38px,rgba(255,255,255,0)_38px,rgba(255,255,255,0)_90px)]' />
-          <div className='pointer-events-none absolute right-8 top-6 h-24 w-24 rounded-full bg-[#F39B3A]/45 blur-xl' />
-
+      <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
+        <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
             <p className='text-[11px] font-semibold uppercase tracking-[0.42em] text-white/80'>
               Zaterdag
@@ -28,27 +25,32 @@ export default function FamilienamiddagSection() {
             </p>
           </div>
 
-          <div className='relative px-6 pb-10 sm:px-12'>
-            <div className='grid gap-3 sm:grid-cols-2'>
-              {activities.map((a) => (
-                <div
-                  key={a}
-                  className='border-white/16 rounded-[22px] border bg-white/10 px-5 py-4 text-center odd:rotate-1 even:-rotate-1'
-                >
-                  <p className='text-[11px] font-extrabold uppercase tracking-[0.26em] text-white'>
-                    {a}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div className='relative px-6 pb-6 sm:px-12'>
+            <div className='grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-start'>
+              <div className='space-y-3'>
+                {activities.map((a) => (
+                  <div
+                    key={a}
+                    className='rounded-[18px] bg-white/5 px-5 py-4 text-center'
+                  >
+                    <p className='text-[11px] font-extrabold uppercase tracking-[0.26em] text-white'>
+                      {a}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
-            <div className='border-white/16 mt-6 rounded-[22px] border bg-gradient-to-r from-[#F39B3A]/30 via-white/5 to-[#F39B3A]/25 px-5 py-5 text-center'>
-              <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/80'>
-                Tip
-              </p>
-              <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white/95'>
-                Kom op tijd — doorlopend activiteiten tijdens de namiddag
-              </p>
+              <div className='rounded-[18px] bg-[#F39B3A] px-5 py-6 text-center text-white'>
+                <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85'>
+                  Tip
+                </p>
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  Kom op tijd - doorlopend activiteiten tijdens de namiddag
+                </p>
+                <div className='mt-4 inline-flex rounded-full bg-white px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#C56C3A]'>
+                  Familie
+                </div>
+              </div>
             </div>
           </div>
         </div>
