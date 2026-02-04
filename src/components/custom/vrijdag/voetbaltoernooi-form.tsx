@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
 const inputClassName =
-  'mt-2 w-full rounded-2xl border border-secondary/25 bg-white/90 px-4 py-3 text-sm font-semibold text-textdark shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] placeholder:text-textlight/80 focus:border-[#2B58B2]/40 focus:outline-none focus:ring-2 focus:ring-[#2B58B2]/20';
+  'mt-2 w-full rounded-2xl border border-white/20 bg-white/90 px-4 py-3 text-sm font-semibold text-[#1B2B4B] shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] placeholder:text-[#5E6B86] focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20';
 
 const labelClassName =
-  'text-[11px] font-semibold uppercase tracking-[0.22em] sm:tracking-[0.32em] text-textdark/70 break-words hyphens-auto leading-snug';
+  'text-[11px] font-semibold uppercase tracking-[0.22em] sm:tracking-[0.32em] text-white/70 break-words hyphens-auto leading-snug';
 
 const cardClassName =
-  'relative rounded-[32px] border border-secondary/25 bg-white/80 shadow-[0_70px_140px_-110px_rgba(0,0,0,0.6)] backdrop-blur';
+  'relative rounded-[32px] border border-white/16 bg-[#133B76]/80 shadow-[0_70px_140px_-110px_rgba(0,0,0,0.6)] backdrop-blur text-white';
 
 const fieldWrapClassName =
   'min-w-0 max-w-[520px] md:max-w-none justify-self-center md:justify-self-stretch';
@@ -80,17 +80,17 @@ export default function VoetbaltoernooiForm() {
   }
 
   return (
-    <section className='relative mx-auto w-full max-w-6xl px-6 pb-10 pt-10 sm:pb-12 sm:pt-12'>
+    <section className='relative mx-auto w-full max-w-6xl px-6 pb-10 pt-10 text-white sm:pb-12 sm:pt-12'>
       <div className='grid min-w-0 gap-6 lg:grid-cols-[1.25fr_0.75fr]'>
         {/* FORM CARD */}
         <div className={`${cardClassName} block-anim delay-1 min-w-0`}>
           <div className='relative p-6 sm:p-8'>
             <div className='flex items-end justify-between gap-6'>
               <div className='min-w-0'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-[#2B58B2]/70'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-white/70'>
                   Inschrijving
                 </p>
-                <h2 className='mt-3 w-full min-w-0 whitespace-normal break-words text-[22px] font-bold uppercase leading-[1.05] tracking-[0.06em] text-[#2B58B2] sm:text-2xl sm:tracking-[0.12em]'>
+                <h2 className='mt-3 w-full min-w-0 whitespace-normal break-words text-[22px] font-bold uppercase leading-[1.05] tracking-[0.06em] text-white sm:text-2xl sm:tracking-[0.12em]'>
                   Voetbaltornooi
                 </h2>
               </div>
@@ -173,14 +173,14 @@ export default function VoetbaltoernooiForm() {
               <div
                 className={`flex flex-col gap-3 md:flex-row md:items-center md:justify-between ${fieldWrapFullClassName}`}
               >
-                <p className='text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-textdark/60 sm:text-[11px] sm:tracking-[0.32em]'>
+                <p className='text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px] sm:tracking-[0.32em]'>
                   Betaling: overschrijving / Payconiq QR
                 </p>
 
                 <Button
                   type='submit'
                   disabled={status === 'sending'}
-                  className='h-12 rounded-full bg-[#2B58B2] text-xs font-semibold uppercase tracking-[0.28em] text-white hover:bg-[#234B93] disabled:opacity-60'
+                  className='h-12 rounded-full border border-white/60 bg-white/10 text-xs font-semibold uppercase tracking-[0.28em] text-white transition hover:bg-white/20 disabled:opacity-60'
                 >
                   {status === 'sending'
                     ? 'Verzenden...'
@@ -217,49 +217,49 @@ export default function VoetbaltoernooiForm() {
           className={`${cardClassName} block-anim delay-2 min-w-0 p-6 sm:p-8`}
         >
           <div className='relative'>
-            <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-[#2B58B2]/70'>
+            <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-white/70'>
               Praktisch
             </p>
 
             <div className='mt-4 space-y-4'>
-              <div className='block-anim delay-2 rounded-2xl border border-secondary/15 bg-white/80 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-[#2B58B2]'>
+              <div className='block-anim delay-2 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
+                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-white'>
                   Betaling
                 </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-textdark/60'>
+                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
                   Overschrijving of Payconiq QR. Vermeld steeds de ploegnaam.
                 </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-textdark/60'>
+                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
                   Niet betaald = niet ingeschreven.
                 </p>
               </div>
 
-              <div className='block-anim delay-3 rounded-2xl border border-secondary/15 bg-white/80 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-[#2B58B2]'>
+              <div className='block-anim delay-3 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
+                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-white'>
                   Spelreglement
                 </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-textdark/60'>
+                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
                   De grote lijnen staan onderaan op deze pagina.
                 </p>
                 <a
                   href='/files/Spelreglement%20VKH-tornooi.pdf'
-                  className='mt-3 inline-flex text-xs font-semibold uppercase tracking-[0.32em] text-[#2B58B2] underline-offset-4 transition hover:underline'
+                  className='mt-3 inline-flex text-xs font-semibold uppercase tracking-[0.32em] text-white underline-offset-4 transition hover:underline'
                 >
                   Download volledig reglement
                 </a>
               </div>
 
-              <div className='block-anim delay-3 rounded-2xl border border-secondary/15 bg-white/80 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-[#2B58B2]'>
+              <div className='block-anim delay-3 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
+                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-white'>
                   Inbegrepen
                 </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-textdark/60'>
+                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
                   3 flessen water + tickets voor Extra Time.
                 </p>
               </div>
 
-              <div className='block-anim delay-3 rounded-2xl border border-secondary/15 bg-white/80 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-xs font-semibold uppercase tracking-[0.20em] text-textdark/60'>
+              <div className='block-anim delay-3 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
+                <p className='text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
                   Indien u met meer dan 10 personen wenst deel te nemen aan het
                   tornooi, gelieve dan even per mail contact op te nemen.
                 </p>
