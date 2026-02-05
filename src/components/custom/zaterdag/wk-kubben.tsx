@@ -13,9 +13,6 @@ export default function WkKubbSection() {
         <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 sm:px-12'>
             <div className='mx-auto max-w-xl text-center'>
-              <p className='text-[11px] font-semibold uppercase tracking-[0.42em] text-white/90'>
-                Zaterdag
-              </p>
               <h2 className='mt-4 text-4xl font-extrabold uppercase tracking-[0.24em] text-white sm:text-5xl'>
                 WK Kubben
               </h2>

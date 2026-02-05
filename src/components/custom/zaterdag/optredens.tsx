@@ -42,9 +42,6 @@ export default function LiveOptredensSection() {
       <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
-            <p className='text-[11px] font-semibold uppercase tracking-[0.42em] text-white/85'>
-              Zaterdag
-            </p>
             <h2 className='mt-4 text-4xl font-extrabold uppercase tracking-[0.24em] sm:text-5xl'>
               Live
             </h2>

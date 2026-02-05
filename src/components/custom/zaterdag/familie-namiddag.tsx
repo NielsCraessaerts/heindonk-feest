@@ -10,10 +10,7 @@
       <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
-            <p className='text-[11px] font-semibold uppercase tracking-[0.42em] text-white/80'>
-              Zaterdag
-            </p>
-            <h2 className='mt-4 text-4xl font-extrabold uppercase tracking-[0.24em] sm:text-5xl'>
+            <h2 className='mt-4 break-words text-xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em]'>
               Familienamiddag
             </h2>
             <div className='mx-auto mt-4 h-px w-28 bg-white/40' />

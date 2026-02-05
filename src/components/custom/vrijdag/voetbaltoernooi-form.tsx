@@ -1,22 +1,12 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
 
 const inputClassName =
-  'mt-2 w-full rounded-2xl border border-white/20 bg-white/90 px-4 py-3 text-sm font-semibold text-[#1B2B4B] shadow-[0_18px_40px_-30px_rgba(0,0,0,0.45)] placeholder:text-[#5E6B86] focus:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/20';
+  'mt-2 w-full rounded-[14px] bg-white/90 px-4 py-3 text-sm font-semibold text-[#1F4E97] placeholder:text-[#5A6C8E] focus:outline-none';
 
 const labelClassName =
-  'text-[11px] font-semibold uppercase tracking-[0.22em] sm:tracking-[0.32em] text-white/70 break-words hyphens-auto leading-snug';
-
-const cardClassName =
-  'relative rounded-[32px] border border-white/16 bg-[#133B76]/80 shadow-[0_70px_140px_-110px_rgba(0,0,0,0.6)] backdrop-blur text-white';
-
-const fieldWrapClassName =
-  'min-w-0 max-w-[520px] md:max-w-none justify-self-center md:justify-self-stretch';
-
-const fieldWrapFullClassName =
-  'min-w-0 max-w-[520px] md:col-span-2 md:max-w-none justify-self-center md:justify-self-stretch';
+  'text-[10px] font-semibold uppercase tracking-[0.32em] text-white/80';
 
 type Status = 'idle' | 'sending' | 'ok' | 'error';
 
@@ -80,193 +70,176 @@ export default function VoetbaltoernooiForm() {
   }
 
   return (
-    <section className='relative mx-auto w-full max-w-6xl px-6 pb-10 pt-10 text-white sm:pb-12 sm:pt-12'>
-      <div className='grid min-w-0 gap-6 lg:grid-cols-[1.25fr_0.75fr]'>
-        {/* FORM CARD */}
-        <div className={`${cardClassName} block-anim delay-1 min-w-0`}>
-          <div className='relative p-6 sm:p-8'>
-            <div className='flex items-end justify-between gap-6'>
-              <div className='min-w-0'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-white/70'>
+    <section className='relative text-white'>
+      <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
+        <div className='relative overflow-hidden rounded-[28px]'>
+          <div className='relative px-6 py-10 text-center sm:px-12'>
+            <h2 className='mt-4 text-2xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em] break-words'>
+              Voetbaltornooi
+            </h2>
+            <div className='mx-auto mt-4 h-px w-28 bg-white/40' />
+            <div className='mt-5 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white'>
+              Open inschrijvingen
+            </div>
+          </div>
+
+          <div className='relative px-6 pb-6 sm:px-12'>
+            <div className='grid gap-4 lg:grid-cols-[1.35fr_0.65fr] lg:items-start'>
+              <div className='rounded-[18px] bg-white/15 px-5 py-5'>
+                <p className='text-center text-[11px] font-semibold uppercase tracking-[0.34em] text-white/90'>
                   Inschrijving
                 </p>
-                <h2 className='mt-3 w-full min-w-0 whitespace-normal break-words text-[22px] font-bold uppercase leading-[1.05] tracking-[0.06em] text-white sm:text-2xl sm:tracking-[0.12em]'>
-                  Voetbaltornooi
-                </h2>
+
+                <form
+                  className='mt-4 grid gap-4 md:grid-cols-2'
+                  onSubmit={onSubmit}
+                >
+                  <label className='block md:col-span-1'>
+                    <span className={labelClassName}>Competitie *</span>
+                    <select
+                      name='competitie'
+                      className={inputClassName}
+                      defaultValue=''
+                      required
+                    >
+                      <option value='' disabled>
+                        Kies dames of heren
+                      </option>
+                      <option value='dames'>Damescompetitie</option>
+                      <option value='heren'>Herencompetitie</option>
+                    </select>
+                  </label>
+
+                  <label className='block md:col-span-1'>
+                    <span className={labelClassName}>Teamnaam *</span>
+                    <input
+                      type='text'
+                      name='teamnaam'
+                      placeholder='VK Heindonk'
+                      className={inputClassName}
+                      required
+                    />
+                  </label>
+
+                  <label className='block md:col-span-1'>
+                    <span className={labelClassName}>
+                      Teamverantwoordelijke *
+                    </span>
+                    <input
+                      type='text'
+                      name='teamverantwoordelijke'
+                      placeholder='Naam en voornaam'
+                      className={inputClassName}
+                      required
+                    />
+                  </label>
+
+                  <label className='block md:col-span-1'>
+                    <span className={labelClassName}>E-mailadres *</span>
+                    <input
+                      type='email'
+                      name='email'
+                      placeholder='contact@team.be'
+                      className={inputClassName}
+                      required
+                    />
+                  </label>
+
+                  <label className='block md:col-span-1'>
+                    <span className={labelClassName}>Telefoon *</span>
+                    <input
+                      type='tel'
+                      name='telefoon'
+                      placeholder='+32 470 00 00 00'
+                      className={inputClassName}
+                      required
+                    />
+                  </label>
+
+                  <label className='block md:col-span-2'>
+                    <span className={labelClassName}>Opmerkingen</span>
+                    <textarea
+                      name='opmerkingen'
+                      rows={4}
+                      placeholder='Vul hier extra info in voor de organisatie.'
+                      className={`${inputClassName} resize-none`}
+                    />
+                  </label>
+
+                  <div className='flex flex-col gap-3 md:col-span-2 md:flex-row md:items-center md:justify-between'>
+                    <p className='text-center text-[10px] font-semibold uppercase tracking-[0.26em] text-white/75'>
+                      Betaling: overschrijving / Payconiq QR
+                    </p>
+
+                    <button
+                      type='submit'
+                      disabled={status === 'sending'}
+                      className='inline-flex h-12 items-center justify-center rounded-full bg-white/20 px-6 text-[11px] font-extrabold uppercase tracking-[0.34em] text-white transition hover:bg-white/30 disabled:opacity-60'
+                    >
+                      {status === 'sending'
+                        ? 'Verzenden...'
+                        : 'Inschrijving verzenden'}
+                    </button>
+                  </div>
+
+                  {status !== 'idle' && (
+                    <div
+                      className={`rounded-[16px] px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] md:col-span-2 ${
+                        status === 'ok' ? 'bg-emerald-100 text-emerald-900' : ''
+                      } ${
+                        status === 'error' ? 'bg-rose-100 text-rose-900' : ''
+                      } ${
+                        status === 'sending' ? 'bg-white/80 text-[#1F4E97]' : ''
+                      }`}
+                    >
+                      {message ||
+                        (status === 'sending' ? 'Bezig met verzenden...' : '')}
+                    </div>
+                  )}
+                </form>
+              </div>
+
+              <div className='space-y-3'>
+                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                    Betaling
+                  </p>
+                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                    Overschrijving of Payconiq QR
+                  </p>
+                </div>
+
+                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                    Spelreglement
+                  </p>
+
+                  <a
+                    href='/files/Spelreglement%20VKH-tornooi.pdf'
+                    className='mt-3 inline-flex text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80 underline-offset-4 transition hover:underline'
+                  >
+                    Download volledig reglement
+                  </a>
+                </div>
+
+                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                    Inbegrepen
+                  </p>
+                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                    3 flessen water + tickets voor Extra Time
+                  </p>
+                </div>
+
+                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                  <p className='text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80'>
+                    Vanaf 10 deelnemers graag even mailen naar de organisatie.
+                  </p>
+                </div>
               </div>
             </div>
-
-            <form
-              className='mt-8 grid gap-5 md:grid-cols-2'
-              onSubmit={onSubmit}
-            >
-              <label className={`md:col-span-1 ${fieldWrapClassName}`}>
-                <span className={labelClassName}>Competitie *</span>
-                <select
-                  name='competitie'
-                  className={inputClassName}
-                  defaultValue=''
-                  required
-                >
-                  <option value='' disabled>
-                    Kies dames of heren
-                  </option>
-                  <option value='dames'>Damescompetitie</option>
-                  <option value='heren'>Herencompetitie</option>
-                </select>
-              </label>
-
-              <label className={`md:col-span-1 ${fieldWrapClassName}`}>
-                <span className={labelClassName}>Teamnaam *</span>
-                <input
-                  type='text'
-                  name='teamnaam'
-                  placeholder='VK Heindonk'
-                  className={inputClassName}
-                  required
-                />
-              </label>
-
-              <label className={`md:col-span-1 ${fieldWrapClassName}`}>
-                <span className={labelClassName}>Teamverantwoordelijke *</span>
-                <input
-                  type='text'
-                  name='teamverantwoordelijke'
-                  placeholder='Naam en voornaam'
-                  className={inputClassName}
-                  required
-                />
-              </label>
-
-              <label className={`md:col-span-1 ${fieldWrapClassName}`}>
-                <span className={labelClassName}>E-mailadres *</span>
-                <input
-                  type='email'
-                  name='email'
-                  placeholder='contact@team.be'
-                  className={inputClassName}
-                  required
-                />
-              </label>
-
-              <label className={`md:col-span-1 ${fieldWrapClassName}`}>
-                <span className={labelClassName}>Telefoon *</span>
-                <input
-                  type='tel'
-                  name='telefoon'
-                  placeholder='+32 470 00 00 00'
-                  className={inputClassName}
-                  required
-                />
-              </label>
-
-              <label className={fieldWrapFullClassName}>
-                <span className={labelClassName}>Opmerkingen</span>
-                <textarea
-                  name='opmerkingen'
-                  rows={4}
-                  placeholder='Vul hier extra info in voor de organisatie.'
-                  className={`${inputClassName} resize-none`}
-                />
-              </label>
-
-              <div
-                className={`flex flex-col gap-3 md:flex-row md:items-center md:justify-between ${fieldWrapFullClassName}`}
-              >
-                <p className='text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-white/70 sm:text-[11px] sm:tracking-[0.32em]'>
-                  Betaling: overschrijving / Payconiq QR
-                </p>
-
-                <Button
-                  type='submit'
-                  disabled={status === 'sending'}
-                  className='h-12 rounded-full border border-white/60 bg-white/10 text-xs font-semibold uppercase tracking-[0.28em] text-white transition hover:bg-white/20 disabled:opacity-60'
-                >
-                  {status === 'sending'
-                    ? 'Verzenden...'
-                    : 'Inschrijving verzenden'}
-                </Button>
-              </div>
-
-              {status !== 'idle' && (
-                <div
-                  className={`rounded-2xl border p-4 text-xs font-semibold uppercase tracking-[0.20em] ${fieldWrapFullClassName} ${
-                    status === 'ok'
-                      ? 'border-emerald-200 bg-emerald-50/70 text-emerald-900'
-                      : ''
-                  } ${
-                    status === 'error'
-                      ? 'border-rose-200 bg-rose-50/70 text-rose-900'
-                      : ''
-                  } ${
-                    status === 'sending'
-                      ? 'border-secondary/15 bg-white/70 text-textdark/70'
-                      : ''
-                  }`}
-                >
-                  {message ||
-                    (status === 'sending' ? 'Bezig met verzenden...' : '')}
-                </div>
-              )}
-            </form>
           </div>
         </div>
-
-        {/* INFO CARD (rechts) */}
-        <aside
-          className={`${cardClassName} block-anim delay-2 min-w-0 p-6 sm:p-8`}
-        >
-          <div className='relative'>
-            <p className='text-[10px] font-semibold uppercase tracking-[0.48em] text-white/70'>
-              Praktisch
-            </p>
-
-            <div className='mt-4 space-y-4'>
-              <div className='block-anim delay-2 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-white'>
-                  Betaling
-                </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
-                  Overschrijving of Payconiq QR. Vermeld steeds de ploegnaam.
-                </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
-                  Niet betaald = niet ingeschreven.
-                </p>
-              </div>
-
-              <div className='block-anim delay-3 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-white'>
-                  Spelreglement
-                </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
-                  De grote lijnen staan onderaan op deze pagina.
-                </p>
-                <a
-                  href='/files/Spelreglement%20VKH-tornooi.pdf'
-                  className='mt-3 inline-flex text-xs font-semibold uppercase tracking-[0.32em] text-white underline-offset-4 transition hover:underline'
-                >
-                  Download volledig reglement
-                </a>
-              </div>
-
-              <div className='block-anim delay-3 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.32em] text-white'>
-                  Inbegrepen
-                </p>
-                <p className='mt-2 text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
-                  3 flessen water + tickets voor Extra Time.
-                </p>
-              </div>
-
-              <div className='block-anim delay-3 rounded-2xl border border-white/12 bg-white/10 p-4 shadow-[0_18px_40px_-34px_rgba(0,0,0,0.35)]'>
-                <p className='text-xs font-semibold uppercase tracking-[0.20em] text-white/70'>
-                  Indien u met meer dan 10 personen wenst deel te nemen aan het
-                  tornooi, gelieve dan even per mail contact op te nemen.
-                </p>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
   );
