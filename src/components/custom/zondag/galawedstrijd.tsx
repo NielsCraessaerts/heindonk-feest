@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ZondagGalawedstrijd() {
   const charities = [
     'Het Rode Kruis',
@@ -127,9 +129,17 @@ export default function ZondagGalawedstrijd() {
                 <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
                   WeTickets + QR code
                 </p>
-                <div className='mx-auto mt-4 h-20 w-20 rounded-[18px] bg-white/20' />
+                <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
+                  <Image
+                    src='/images/qr-code.png'
+                    alt='QR code tickets'
+                    width={80}
+                    height={80}
+                    className='h-20 w-20 object-contain'
+                  />
+                </div>
                 <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
-                  QR placeholder
+                  Scan voor tickets
                 </p>
               </div>
 

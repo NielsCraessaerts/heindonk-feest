@@ -13,10 +13,18 @@ export default function ZaterdagPage() {
       <div className="[background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22120%22 height=%22120%22 filter=%22url(%23n)%22 opacity=%220.55%22/%3E%3C/svg%3E')] pointer-events-none fixed inset-0 -z-20 opacity-[0.12]" />
 
       <div className='relative z-10'>
-        <FanfareFeestenSection />
-        <WkKubbSection />
-        <FamilienamiddagSection />
-        <LiveOptredensSection />
+        <div className='block-anim delay-1'>
+          <FanfareFeestenSection />
+        </div>
+        <div className='block-anim delay-2'>
+          <WkKubbSection />
+        </div>
+        <div className='block-anim delay-3'>
+          <FamilienamiddagSection />
+        </div>
+        <div className='block-anim delay-4'>
+          <LiveOptredensSection />
+        </div>
       </div>
     </main>
   );

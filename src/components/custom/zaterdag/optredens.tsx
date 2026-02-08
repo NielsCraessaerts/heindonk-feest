@@ -133,30 +133,53 @@ export default function LiveOptredensSection() {
               </div>
             </div>
 
-            <div className='mt-8 grid gap-4 md:grid-cols-2'>
-              <div className='rounded-[22px] bg-white/10 px-5 py-5 text-center'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.38em] text-white/85'>
+            <div className='mt-8 grid gap-4 lg:grid-cols-2'>
+              <div className='border-white/12 rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/95'>
                   Tickets
                 </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.24em] text-white'>
-                  Link naar WeTickets + QR code
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  WeTickets + QR code
+                </p>
+                <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
+                  <Image
+                    src='/images/qr-code.png'
+                    alt='QR code tickets'
+                    width={80}
+                    height={80}
+                    className='h-20 w-20 object-contain'
+                  />
+                </div>
+                <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
+                  Scan voor tickets
                 </p>
               </div>
 
-              <div className='flex items-center justify-center rounded-[22px] bg-white/10 px-5 py-5'>
+              <div className='border-white/12 rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/80'>
+                  VIP arrangement
+                </p>
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  Via sponsoring
+                </p>
+
                 <a
                   href='/sponsorpakketten'
-                  className='bg-white/12 hover:bg-white/18 inline-flex items-center justify-center rounded-full border border-white/35 px-6 py-3 text-[11px] font-extrabold uppercase tracking-[0.34em] text-white transition'
+                  className='mt-5 inline-flex h-12 items-center justify-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
                 >
-                  VIP arrangement
+                  Bekijk VIP mogelijkheden
                 </a>
+
+                <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
+                  Support the cause &bull; Support the club
+                </p>
               </div>
             </div>
           </div>
 
           <div className='px-6 py-4 text-center'>
             <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/75'>
-              Zaterdag • Live muziek • Tickets via WeTickets
+              Sport, spel en muziek &bull; Foodtrucks
             </p>
           </div>
         </div>

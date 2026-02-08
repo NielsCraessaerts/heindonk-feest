@@ -91,6 +91,22 @@
   .summary-anim .swiper-pagination-bullet-active {
     background: rgba(255, 255, 255, 1);
   }
+
+  .sponsor-swiper-pagination {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 8px;
+  }
+
+  .sponsor-swiper-pagination .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.7);
+    opacity: 1;
+  }
+
+  .sponsor-swiper-pagination .swiper-pagination-bullet-active {
+    background: rgba(255, 255, 255, 1);
+  }
 }
 
 @layer utilities {
@@ -108,6 +124,16 @@
 
   .block-anim.delay-3 {
     animation-delay: 360ms;
+  }
+
+  .block-anim.delay-4 {
+    animation-delay: 480ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .block-anim {
+      animation: none;
+    }
   }
 }
 

@@ -84,7 +84,7 @@ export default function VoetbaltoernooiForm() {
           </div>
 
           <div className='relative px-6 pb-6 sm:px-12'>
-            <div className='grid gap-4 lg:grid-cols-[1.35fr_0.65fr] lg:items-start'>
+            <div className='grid gap-4 lg:grid-cols-[1.3fr_0.7fr] lg:items-start'>
               <div className='rounded-[18px] bg-white/15 px-5 py-5'>
                 <p className='text-center text-[11px] font-semibold uppercase tracking-[0.34em] text-white/90'>
                   Inschrijving
@@ -199,43 +199,56 @@ export default function VoetbaltoernooiForm() {
                 </form>
               </div>
 
-              <div className='space-y-3'>
-                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
-                    Betaling
-                  </p>
-                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                    Overschrijving of Payconiq QR
-                  </p>
+              <div className='rounded-[18px] bg-white/10 p-3 sm:p-4 lg:h-full'>
+                <div className='flex h-full min-h-[300px] items-center justify-center rounded-[14px] border border-dashed border-white/45 bg-white/5 p-6 text-center'>
+                  <div>
+                    <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/75'>
+                      Foto
+                    </p>
+                    <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white/90'>
+                      Plaats hier een tornooi-afbeelding
+                    </p>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
-                    Spelreglement
-                  </p>
+            <div className='mt-4 grid gap-3 md:grid-cols-2'>
+              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                  Betaling
+                </p>
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  Overschrijving of Payconiq QR
+                </p>
+              </div>
 
-                  <a
-                    href='/files/Spelreglement%20VKH-tornooi.pdf'
-                    className='mt-3 inline-flex text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80 underline-offset-4 transition hover:underline'
-                  >
-                    Download volledig reglement
-                  </a>
-                </div>
+              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                  Spelreglement
+                </p>
 
-                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
-                    Inbegrepen
-                  </p>
-                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                    3 flessen water + tickets voor Extra Time
-                  </p>
-                </div>
+                <a
+                  href='/files/Spelreglement%20VKH-tornooi.pdf'
+                  className='mt-3 inline-flex text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80 underline-offset-4 transition hover:underline'
+                >
+                  Download volledig reglement
+                </a>
+              </div>
 
-                <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                  <p className='text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80'>
-                    Vanaf 10 deelnemers graag even mailen naar de organisatie.
-                  </p>
-                </div>
+              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                  Inbegrepen
+                </p>
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  3 flessen water + tickets voor Extra Time
+                </p>
+              </div>
+
+              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+                <p className='text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80'>
+                  Vanaf 10 deelnemers graag even mailen naar de organisatie.
+                </p>
               </div>
             </div>
           </div>

@@ -51,13 +51,10 @@ export default function FanfareFeestenSection() {
             <div className='grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch'>
               {/* Highlights links */}
               <div className='space-y-3'>
-                {highlights.map((item, idx) => (
+                {highlights.map((item) => (
                   <div
                     key={item}
-                    className={[
-                      'rounded-[18px] bg-white/5 px-5 py-4 text-center',
-                      idx % 2 === 0 ? 'rotate-[0.5deg]' : '-rotate-[0.5deg]',
-                    ].join(' ')}
+                    className='rounded-[18px] bg-white/5 px-5 py-4 text-center'
                   >
                     <p className='text-[11px] font-extrabold uppercase tracking-[0.26em] text-white'>
                       {item}

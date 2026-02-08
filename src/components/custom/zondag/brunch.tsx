@@ -1,5 +1,5 @@
 export default function ZondagBrunch() {
-  const badges = ['Familie', 'Gezellig', 'Zondag'];
+  const badges = ['Familie', 'Gezellig'];
 
   return (
     <section className='relative text-white'>
@@ -13,22 +13,37 @@ export default function ZondagBrunch() {
           </div>
 
           <div className='px-6 pb-10 sm:px-12'>
-            <div className='rounded-[20px] bg-white/10 px-6 py-7'>
-              <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/80'>
-                Gezellig ontbijten op zondag
-              </p>
-              <p className='mt-4 text-[12px] font-semibold uppercase tracking-[0.24em] text-white/80'>
-                Doorlopend voor en tijdens het programma
-              </p>
-              <div className='mt-4 flex flex-wrap gap-2'>
-                {badges.map((item) => (
-                  <span
-                    key={item}
-                    className='rounded-full bg-white/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.32em] text-white'
-                  >
-                    {item}
-                  </span>
-                ))}
+            <div className='grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch'>
+              <div className='rounded-[20px] bg-white/10 px-6 py-7'>
+                <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/80'>
+                  Gezellig ontbijten op zondag
+                </p>
+                <p className='mt-4 text-[12px] font-semibold uppercase tracking-[0.24em] text-white/80'>
+                  Doorlopend voor en tijdens het programma
+                </p>
+                <div className='mt-4 flex flex-wrap gap-2'>
+                  {badges.map((item) => (
+                    <span
+                      key={item}
+                      className='rounded-full bg-white/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.32em] text-white'
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className='rounded-[20px] bg-white/10 p-3 sm:p-4'>
+                <div className='flex h-full min-h-[260px] items-center justify-center rounded-[14px] border border-dashed border-white/45 bg-white/5 p-6 text-center'>
+                  <div>
+                    <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/75'>
+                      Foto
+                    </p>
+                    <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white/90'>
+                      Plaats hier een brunch-afbeelding
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

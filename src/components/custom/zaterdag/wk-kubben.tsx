@@ -95,21 +95,34 @@ export default function WkKubbSection() {
                 </form>
               </div>
 
-              <div className='space-y-3'>
-                {items.map((it) => (
-                  <div
-                    key={it.label}
-                    className='rounded-[18px] bg-white/10 px-5 py-4'
-                  >
-                    <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
-                      {it.label}
+              <div className='rounded-[18px] bg-white/10 p-3 sm:p-4 lg:h-full'>
+                <div className='flex h-full min-h-[300px] items-center justify-center rounded-[14px] border border-dashed border-white/45 bg-white/5 p-6 text-center'>
+                  <div>
+                    <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/75'>
+                      Foto
                     </p>
-                    <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                      {it.value}
+                    <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white/90'>
+                      Plaats hier een kubb-afbeelding
                     </p>
                   </div>
-                ))}
+                </div>
               </div>
+            </div>
+
+            <div className='mt-4 grid gap-3 md:grid-cols-2'>
+              {items.map((it) => (
+                <div
+                  key={it.label}
+                  className='rounded-[18px] bg-white/10 px-5 py-4'
+                >
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                    {it.label}
+                  </p>
+                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                    {it.value}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

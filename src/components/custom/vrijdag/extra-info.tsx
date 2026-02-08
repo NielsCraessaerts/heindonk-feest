@@ -1,11 +1,7 @@
 ﻿import Image from 'next/image';
 
 export default function ExtraInfoVrijdag() {
-  const highlights = [
-    'Doorlopend sfeer en muziek',
-    'In en rond de feesttent',
-    'Tickets via WeTickets',
-  ];
+  const highlights = ['Doorlopend sfeer en muziek', 'In en rond de feesttent'];
 
   const headliners = [
     { name: 'Jonas Van Opstal', photoSrc: '' },
@@ -102,22 +98,56 @@ export default function ExtraInfoVrijdag() {
                     </p>
                   </div>
                 ))}
+              </div>
 
-                <a
-                  href='/sponsorpakketten'
-                  className='flex h-full flex-col items-center justify-center rounded-[18px] bg-white/10 px-5 py-4 text-center transition hover:bg-white/15'
-                >
-                  <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85'>
+              <div className='mt-6 grid gap-4 lg:grid-cols-2'>
+                <div className='border-white/12 rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/95'>
+                    Tickets
+                  </p>
+                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                    WeTickets + QR code
+                  </p>
+                  <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
+                    <Image
+                      src='/images/qr-code.png'
+                      alt='QR code tickets'
+                      width={80}
+                      height={80}
+                      className='h-20 w-20 object-contain'
+                    />
+                  </div>
+                  <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
+                    Scan voor tickets
+                  </p>
+                </div>
+
+                <div className='border-white/12 rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/80'>
                     VIP arrangement
                   </p>
-                </a>
+                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                    Via sponsoring
+                  </p>
+
+                  <a
+                    href='/sponsorpakketten'
+                    className='mt-5 inline-flex h-12 items-center justify-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
+                  >
+                    Bekijk VIP mogelijkheden
+                  </a>
+
+                  <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
+                    Support the cause &bull; Support the club
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           <div className='px-6 py-4 text-center'>
             <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/75'>
-              Sport, spel en muziek - Foodtrucks
+              Sport, spel en muziek &bull; Foodtrucks
             </p>
           </div>
         </div>
