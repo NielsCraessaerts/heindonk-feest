@@ -5,22 +5,30 @@ import { useRef } from 'react';
 
 export default function LiveOptredensSection() {
   const acts = [
-    { name: 'DJ Sjekke', tone: 'peach', time: '20:00', imgSrc: '' },
-    { name: 'De Jaargetijden', tone: 'white', time: '21:30', imgSrc: '' },
-    { name: 'Eigen Kweek', tone: 'orange', time: '23:00', imgSrc: '' },
-    { name: 'Bram & Lennert', tone: 'brown', time: '00:30', imgSrc: '' },
+    {
+      name: 'De Jaargetijden',
+      time: '21:30',
+      imgSrc: '/images/jaargetijden.png',
+      intro: `Het betere levenslied:
+van Metallica tot jantje smit
+Born to be live, maar ook ... to be wild
+Vader Abraham meets Destiny's Child
+Geen taal is taboe noch stijl wordt gesmeden
+Muziek in zijnen blote, oprecht en onversneden`,
+    },
+    {
+      name: 'Eigen Kweek',
+      time: '23:00',
+      imgSrc: '',
+      intro: 'Stevige set met energie en herkenbare feestnummers.',
+    },
+    {
+      name: 'Bram & Lennert',
+      time: '00:30',
+      imgSrc: '',
+      intro: 'Sluiten de avond af met een sterke live partyvibe.',
+    },
   ] as const;
-
-  const toneClass: Record<(typeof acts)[number]['tone'], string> = {
-    peach:
-      'bg-[#F6C89B] text-[#8B3F12] border-white/0 shadow-[0_22px_55px_-42px_rgba(0,0,0,0.55)]',
-    white:
-      'bg-white text-[#1F4E97] border-white/0 shadow-[0_22px_55px_-42px_rgba(0,0,0,0.55)]',
-    orange:
-      'bg-[#F39B3A] text-white border-white/0 shadow-[0_22px_55px_-42px_rgba(0,0,0,0.55)]',
-    brown:
-      'bg-[#7A3A24] text-white border-white/0 shadow-[0_22px_55px_-42px_rgba(0,0,0,0.6)]',
-  };
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
 
@@ -86,6 +94,15 @@ export default function LiveOptredensSection() {
                 </div>
               </div>
 
+              <div className='mb-4 rounded-[16px] bg-white/10 px-5 py-4 text-center'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.32em] text-white/80'>
+                  Doorlopend
+                </p>
+                <p className='mt-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  DJ Sjekke rijgt de hele avond aaneen tussen alle artiesten.
+                </p>
+              </div>
+
               <div
                 ref={sliderRef}
                 className='flex w-full snap-x snap-mandatory gap-y-4 overflow-x-auto pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
@@ -97,36 +114,41 @@ export default function LiveOptredensSection() {
                     className={[
                       'snap-start',
                       'w-full shrink-0',
-                      'rounded-[20px] p-6',
+                      'rounded-[20px] border border-white/10 bg-[#F39B3A] p-6 text-white',
                       'shadow-[0_26px_60px_-40px_rgba(0,0,0,0.55)]',
-                      toneClass[a.tone],
                     ].join(' ')}
                   >
                     <div className='flex items-center justify-between text-[10px] font-extrabold uppercase tracking-[0.34em]'>
                       <span>Live</span>
                       <span>{a.time}</span>
                     </div>
-                    <h3 className='mt-6 text-2xl font-extrabold uppercase tracking-[0.18em]'>
+                    <h3 className='mt-4 text-2xl font-extrabold uppercase tracking-[0.18em]'>
                       {a.name}
                     </h3>
-                    <p className='mt-2 text-[12px] font-semibold uppercase tracking-[0.24em]'>
-                      Avondprogramma
-                    </p>
-                    <div className='mt-6 h-40 overflow-hidden rounded-[14px] bg-white/15'>
-                      {a.imgSrc ? (
-                        <div className='relative h-full w-full'>
-                          <Image
-                            src={a.imgSrc}
-                            alt={a.name}
-                            fill
-                            className='object-cover'
-                          />
-                        </div>
-                      ) : (
-                        <div className='flex h-full w-full items-center justify-center text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80'>
-                          Foto
-                        </div>
-                      )}
+
+                    <div className='mt-5 grid gap-4 md:grid-cols-[200px_minmax(0,1fr)] md:items-center'>
+                      <div className='h-44 overflow-hidden rounded-[14px] bg-white/15 md:h-full'>
+                        {a.imgSrc ? (
+                          <div className='relative h-full w-full'>
+                            <Image
+                              src={a.imgSrc}
+                              alt={a.name}
+                              fill
+                              className='object-contain p-2'
+                            />
+                          </div>
+                        ) : (
+                          <div className='flex h-full w-full items-center justify-center text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80'>
+                            Foto
+                          </div>
+                        )}
+                      </div>
+
+                      <div className='flex h-full items-start justify-center text-center'>
+                        <p className='whitespace-pre-line text-[14px] font-semibold leading-relaxed tracking-[0.02em] text-white/95'>
+                          {a.intro}
+                        </p>
+                      </div>
                     </div>
                   </article>
                 ))}

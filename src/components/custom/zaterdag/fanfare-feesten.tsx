@@ -5,11 +5,15 @@ export default function FanfareFeestenSection() {
     'Bevriende fanfares spelen live',
     'Doorlopend muziek & sfeer in de tent',
     'Gezellig voor jong en oud',
+    'Gratis inkom',
   ];
 
-  // Placeholder: later invullen met echte logo’s
+  // Placeholder: vul gerust aan met extra fanfarelogo's
   const fanfareLogos: { name: string; src?: string }[] = [
-    { name: 'Fanfare 1', src: '' },
+    {
+      name: 'Iever Maakt Vooruitgang',
+      src: '/images/logos/fanfare-logo.png',
+    },
     { name: 'Fanfare 2', src: '' },
     { name: 'Fanfare 3', src: '' },
     { name: 'Fanfare 4', src: '' },
@@ -22,7 +26,7 @@ export default function FanfareFeestenSection() {
       <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
-            <h2 className='mt-4 text-2xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em] break-words'>
+            <h2 className='mt-4 break-words text-2xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em]'>
               Fanfarefeesten
             </h2>
             <div className='mx-auto mt-4 h-px w-32 bg-white/40' />
@@ -33,7 +37,6 @@ export default function FanfareFeestenSection() {
               Live klanken
             </p>
 
-            {/* Tijden als “sticker pills” */}
             <div className='mt-7 flex flex-wrap items-center justify-center gap-3'>
               <div className='rounded-full bg-white px-5 py-2 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#1F4E97]'>
                 12:30
@@ -49,53 +52,69 @@ export default function FanfareFeestenSection() {
 
           <div className='relative px-6 pb-6 sm:px-12'>
             <div className='grid gap-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch'>
-              {/* Highlights links */}
-              <div className='space-y-3'>
-                {highlights.map((item) => (
-                  <div
-                    key={item}
-                    className='rounded-[18px] bg-white/5 px-5 py-4 text-center'
-                  >
-                    <p className='text-[11px] font-extrabold uppercase tracking-[0.26em] text-white'>
-                      {item}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Logo-strip rechts */}
-              <div className='relative overflow-hidden rounded-[18px] bg-[#F39B3A] px-5 py-6 text-center'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85'>
-                  Deelnemende fanfares
-                </p>
-
-                <div className='mt-5 flex gap-3 overflow-x-auto pb-2'>
-                  {fanfareLogos.map((f) => (
+              <div className='grid gap-4'>
+                <div className='space-y-3'>
+                  {highlights.map((item) => (
                     <div
-                      key={f.name}
-                      className='flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/15'
-                      title={f.name}
+                      key={item}
+                      className='rounded-[18px] bg-white/5 px-5 py-4 text-center'
                     >
-                      {f.src ? (
-                        <Image
-                          src={f.src}
-                          alt={f.name}
-                          width={44}
-                          height={44}
-                          className='h-11 w-11 object-contain'
-                        />
-                      ) : (
-                        <span className='text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/75'>
-                          Logo
-                        </span>
-                      )}
+                      <p className='text-[11px] font-extrabold uppercase tracking-[0.26em] text-white'>
+                        {item}
+                      </p>
                     </div>
                   ))}
                 </div>
 
-                <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80'>
-                  (Wordt aangevuld zodra de line-up vastligt)
-                </p>
+                <div className='relative overflow-hidden rounded-[18px] bg-[#F39B3A] px-4 py-4 text-center sm:px-5 sm:py-5'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.3em] text-white/90 sm:text-[11px]'>
+                    Deelnemende fanfares
+                  </p>
+
+                  <div className='mt-3 overflow-hidden'>
+                    <div className='logo-marquee-track flex w-max gap-2 sm:gap-3'>
+                      {[...fanfareLogos, ...fanfareLogos, ...fanfareLogos].map(
+                        (f, idx) => (
+                          <div
+                            key={`${f.name}-${idx}`}
+                            className='flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 sm:h-14 sm:w-14 sm:rounded-2xl'
+                            title={f.name}
+                          >
+                            {f.src ? (
+                              <Image
+                                src={f.src}
+                                alt={f.name}
+                                width={40}
+                                height={40}
+                                className='h-10 w-10 object-contain sm:h-11 sm:w-11'
+                              />
+                            ) : (
+                              <span className='text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/75'>
+                                Logo
+                              </span>
+                            )}
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+
+                  <p className='mt-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 sm:text-[10px] sm:tracking-[0.22em]'>
+                    (Wordt aangevuld zodra de line-up vastligt)
+                  </p>
+                </div>
+              </div>
+
+              <div className='relative overflow-hidden rounded-[18px] bg-white/10 p-4 text-center'>
+                <div className='relative h-full min-h-[300px] overflow-hidden rounded-[16px]'>
+                  <Image
+                    src='/images/fanfarefeest2.jpeg'
+                    alt='Sfeerbeeld fanfarefeesten vorig jaar'
+                    fill
+                    className='object-cover'
+                    sizes='(min-width: 1024px) 45vw, 100vw'
+                  />
+                </div>
               </div>
             </div>
           </div>

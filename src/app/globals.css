@@ -134,6 +134,23 @@
     .block-anim {
       animation: none;
     }
+
+    .logo-marquee-track {
+      animation: none;
+    }
+  }
+}
+
+.logo-marquee-track {
+  animation: logoMarquee 20s linear infinite;
+}
+
+@keyframes logoMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 

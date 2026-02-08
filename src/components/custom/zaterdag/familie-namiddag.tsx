@@ -1,8 +1,12 @@
-﻿export default function FamilienamiddagSection() {
+import Image from 'next/image';
+
+export default function FamilienamiddagSection() {
   const activities = [
     'Groot springkasteel / run',
     'Levend voetbalspel',
     'Voetbaldarts',
+    'Grime',
+    'Gratis inkom',
   ];
 
   return (
@@ -37,16 +41,28 @@
                 ))}
               </div>
 
-              <div className='rounded-[18px] bg-[#F39B3A] px-5 py-6 text-center text-white'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85'>
-                  Tip
-                </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  Kom op tijd - doorlopend activiteiten tijdens de namiddag
-                </p>
-                <div className='mt-4 inline-flex rounded-full bg-white px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#C56C3A]'>
-                  Familie
+              <div className='rounded-[18px] bg-white/10 p-3 sm:p-4 lg:h-full'>
+                <div className='relative h-full min-h-[280px] overflow-hidden rounded-[14px]'>
+                  <Image
+                    src='/images/tafelvoetbal.png'
+                    alt='Levend tafelvoetbal tijdens de familienamiddag'
+                    fill
+                    className='object-cover'
+                    sizes='(min-width: 1024px) 32vw, 100vw'
+                  />
                 </div>
+              </div>
+            </div>
+
+            <div className='mt-4 rounded-[18px] bg-[#F39B3A] px-5 py-6 text-center text-white'>
+              <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/85'>
+                Tip
+              </p>
+              <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                Kom op tijd - doorlopend activiteiten tijdens de namiddag
+              </p>
+              <div className='mt-4 inline-flex rounded-full bg-white px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#C56C3A]'>
+                Familie
               </div>
             </div>
           </div>

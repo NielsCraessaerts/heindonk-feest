@@ -23,25 +23,25 @@ export default function MainHeading() {
         <div className='relative mx-auto max-w-5xl overflow-hidden rounded-[24px] border border-secondary/20 bg-white/60 px-[clamp(18px,3vw,48px)] py-[clamp(22px,3.6vw,56px)] shadow-[0_70px_160px_-90px_rgba(0,0,0,0.55)] backdrop-blur sm:rounded-[28px]'>
           {/* corner logos (desktop only, keep) */}
           <div className='pointer-events-none absolute left-6 top-6 hidden md:block'>
-            <div className='relative h-12 w-12 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
+            <div className='relative h-16 w-16 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
               <Image
                 src='/images/logos/fanfare_logo.png'
                 alt='Koninklijke Fanfare Iever Maakt Vooruitgang'
                 fill
                 className='object-contain p-2'
-                sizes='48px'
+                sizes='56px'
                 priority
               />
             </div>
           </div>
           <div className='pointer-events-none absolute right-6 top-6 hidden md:block'>
-            <div className='relative h-12 w-12 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
+            <div className='relative h-16 w-16 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
               <Image
                 src='/images/logos/voetbal_logo.png'
                 alt='VK Heindonk'
                 fill
                 className='object-contain p-2'
-                sizes='48px'
+                sizes='56px'
                 priority
               />
             </div>

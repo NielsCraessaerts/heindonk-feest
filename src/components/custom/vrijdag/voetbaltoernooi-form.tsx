@@ -1,5 +1,6 @@
 ﻿'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 const inputClassName =
@@ -74,7 +75,7 @@ export default function VoetbaltoernooiForm() {
       <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
-            <h2 className='mt-4 text-2xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em] break-words'>
+            <h2 className='mt-4 break-words text-2xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em]'>
               Voetbaltornooi
             </h2>
             <div className='mx-auto mt-4 h-px w-28 bg-white/40' />
@@ -167,10 +168,6 @@ export default function VoetbaltoernooiForm() {
                   </label>
 
                   <div className='flex flex-col gap-3 md:col-span-2 md:flex-row md:items-center md:justify-between'>
-                    <p className='text-center text-[10px] font-semibold uppercase tracking-[0.26em] text-white/75'>
-                      Betaling: overschrijving / Payconiq QR
-                    </p>
-
                     <button
                       type='submit'
                       disabled={status === 'sending'}
@@ -200,54 +197,57 @@ export default function VoetbaltoernooiForm() {
               </div>
 
               <div className='rounded-[18px] bg-white/10 p-3 sm:p-4 lg:h-full'>
-                <div className='flex h-full min-h-[300px] items-center justify-center rounded-[14px] border border-dashed border-white/45 bg-white/5 p-6 text-center'>
-                  <div>
-                    <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/75'>
-                      Foto
-                    </p>
-                    <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white/90'>
-                      Plaats hier een tornooi-afbeelding
-                    </p>
-                  </div>
+                <div className='relative h-full min-h-[300px] overflow-hidden rounded-[14px]'>
+                  <Image
+                    src='/images/toernooi.png'
+                    alt='Voetbaltoernooi'
+                    fill
+                    className='object-cover'
+                    sizes='(min-width: 1024px) 32vw, 100vw'
+                  />
                 </div>
               </div>
             </div>
 
             <div className='mt-4 grid gap-3 md:grid-cols-2'>
-              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
+              <div className='rounded-[18px] bg-[#F39B3A] px-5 py-4'>
                 <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
                   Betaling
                 </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  Overschrijving of Payconiq QR
+                <div className='mt-3 flex items-center gap-4'>
+                  <div className='flex h-20 w-20 shrink-0 items-center justify-center rounded-[12px] border border-dashed border-white/45 bg-white/5'>
+                    <span className='text-[9px] font-extrabold uppercase tracking-[0.2em] text-white/80'>
+                      QR
+                    </span>
+                  </div>
+                  <p className='text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Payconiq QR placeholder
+                  </p>
+                </div>
+                <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                  Bij overschrijving: ploegnaam verplicht vermelden in de
+                  mededeling.
                 </p>
               </div>
 
               <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
-                  Spelreglement
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.2em] text-white'>
+                  Prijs per ploeg: EUR 350
                 </p>
-
-                <a
-                  href='/files/Spelreglement%20VKH-tornooi.pdf'
-                  className='mt-3 inline-flex text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80 underline-offset-4 transition hover:underline'
-                >
-                  Download volledig reglement
-                </a>
+                <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80'>
+                  Inbegrepen:
+                </p>
+                <ul className='mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
+                  <li>- Inschrijving ploeg met 10 deelnemers</li>
+                  <li>- 10 tickets Extra Time Party</li>
+                  <li>- 50 euro breekmunten (voor eten en drinken)</li>
+                  <li>- 3 flesjes water</li>
+                </ul>
               </div>
 
-              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
-                  Inbegrepen
-                </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  3 flessen water + tickets voor Extra Time
-                </p>
-              </div>
-
-              <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                <p className='text-[11px] font-semibold uppercase tracking-[0.22em] text-white/80'>
-                  Vanaf 10 deelnemers graag even mailen naar de organisatie.
+              <div className='rounded-[18px] bg-white/10 px-5 py-4 md:col-span-2'>
+                <p className='text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
+                  Dj's en ambiance gedurende het tornooi
                 </p>
               </div>
             </div>
