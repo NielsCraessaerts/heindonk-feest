@@ -241,7 +241,7 @@ export default function VoetbaltoernooiForm() {
                   <li>- Inschrijving ploeg met 10 deelnemers</li>
                   <li>- 10 tickets Extra Time Party</li>
                   <li>- 50 euro breekmunten (voor eten en drinken)</li>
-                  <li>- 3 flesjes water</li>
+                  <li>- 3 flessen water</li>
                 </ul>
               </div>
 

@@ -1,4 +1,7 @@
+﻿'use client';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function FamilienamiddagSection() {
   const activities = [
@@ -8,6 +11,20 @@ export default function FamilienamiddagSection() {
     'Grime',
     'Gratis inkom',
   ];
+  const photos = [
+    '/images/familienamiddag/darts.png',
+    '/images/familienamiddag/tafelvoetbal.png',
+    '/images/familienamiddag/voetbalrun.png',
+    '/images/familienamiddag/tafelvoetbal2.png',
+  ] as const;
+  const [activePhoto, setActivePhoto] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActivePhoto((prev) => (prev + 1) % photos.length);
+    }, 3200);
+    return () => window.clearInterval(timer);
+  }, [photos.length]);
 
   return (
     <section className='relative text-white'>
@@ -43,13 +60,19 @@ export default function FamilienamiddagSection() {
 
               <div className='rounded-[18px] bg-white/10 p-3 sm:p-4 lg:h-full'>
                 <div className='relative h-full min-h-[280px] overflow-hidden rounded-[14px]'>
-                  <Image
-                    src='/images/tafelvoetbal.png'
-                    alt='Levend tafelvoetbal tijdens de familienamiddag'
-                    fill
-                    className='object-cover'
-                    sizes='(min-width: 1024px) 32vw, 100vw'
-                  />
+                  {photos.map((photo, index) => (
+                    <Image
+                      key={photo}
+                      src={photo}
+                      alt='Foto van de familienamiddag'
+                      fill
+                      className={[
+                        'object-cover transition-opacity duration-1000',
+                        index === activePhoto ? 'opacity-100' : 'opacity-0',
+                      ].join(' ')}
+                      sizes='(min-width: 1024px) 32vw, 100vw'
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -61,9 +84,6 @@ export default function FamilienamiddagSection() {
               <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
                 Kom op tijd - doorlopend activiteiten tijdens de namiddag
               </p>
-              <div className='mt-4 inline-flex rounded-full bg-white px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-[#C56C3A]'>
-                Familie
-              </div>
             </div>
           </div>
         </div>

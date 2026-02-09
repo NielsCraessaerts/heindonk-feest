@@ -103,7 +103,7 @@ export default function SponsorpakkettenPage() {
 
       <div className='relative z-10 mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <section className='block-anim delay-1 rounded-[28px] bg-white/10 px-6 py-8 text-center sm:px-10'>
-          <h1 className='text-3xl font-extrabold uppercase tracking-[0.16em] sm:text-4xl'>
+          <h1 className='text-xl font-extrabold uppercase leading-tight tracking-[0.08em] sm:text-4xl sm:tracking-[0.16em]'>
             Sponsorpakketten
           </h1>
           <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/80'>
@@ -149,11 +149,11 @@ export default function SponsorpakkettenPage() {
             {sponsorPackages.map((pkg) => (
               <SwiperSlide key={pkg.name} className='!h-auto'>
                 <article className='h-full rounded-[24px] border border-white/20 bg-white/10 p-6'>
-                  <div className='flex items-start justify-between gap-3'>
-                    <h2 className='text-lg font-extrabold uppercase tracking-[0.12em] text-white sm:text-xl'>
+                  <div className='flex flex-col items-start gap-3 sm:flex-row sm:items-start sm:justify-between'>
+                    <h2 className='min-w-0 text-lg font-extrabold uppercase tracking-[0.1em] text-white sm:text-xl sm:tracking-[0.12em]'>
                       {pkg.name}
                     </h2>
-                    <span className='shrink-0 rounded-full bg-[#F39B3A] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
+                    <span className='shrink-0 self-start rounded-full bg-[#F39B3A] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
                       {pkg.price}
                     </span>
                   </div>

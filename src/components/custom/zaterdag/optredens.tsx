@@ -7,27 +7,33 @@ export default function LiveOptredensSection() {
   const acts = [
     {
       name: 'De Jaargetijden',
-      time: '21:30',
+      time: '20:00',
       imgSrc: '/images/jaargetijden.png',
       intro: `Het betere levenslied:
-van Metallica tot jantje smit
-Born to be live, maar ook ... to be wild
-Vader Abraham meets Destiny's Child
-Geen taal is taboe noch stijl wordt gesmeden
-Muziek in zijnen blote, oprecht en onversneden`,
+      van Metallica tot jantje smit
+      Born to be live, maar ook ... to be wild
+      Vader Abraham meets Destiny's Child
+      Geen taal is taboe noch stijl wordt gesmeden
+      Muziek in zijnen blote, oprecht en onversneden`,
     },
     {
       name: 'Eigen Kweek',
-      time: '23:00',
-      imgSrc: '',
-      intro: 'Stevige set met energie en herkenbare feestnummers.',
+      time: '22:30',
+      imgSrc: '/images/eigenkweek.png',
+      intro: `Eigenkweek is het resultaat van een uitgekiend kweekprogramma want het bestaat uitsluitend uit leden van de familie Vangrunderbeek.
+      De groep werd wereldberoemd in Zemst en omstreken dankzij een legendarisch optreden in café De Kroeg in september 2019 en sindsdien zijn ze niet meer te stoppen.`,
     },
     {
       name: 'Bram & Lennert',
-      time: '00:30',
-      imgSrc: '',
-      intro: 'Sluiten de avond af met een sterke live partyvibe.',
+      time: '00:00',
+      imgSrc: '/images/Bram-Lennert.png',
+      intro: `Wat ooit begon als twee vrienden met een gitaar in Ninove, groeide uit tot een muzikaal duo dat niet meer weg te denken is van de Vlaamse podia.
+      Eens wereldberoemd in Ninove en omstreken — ondertussen een gevestigde naam met een ijzersterke live-reputatie.`,
     },
+  ] as const;
+  const foodtrucks = [
+    { name: 'Vroempatat', logoSrc: '/images/logos/vroempatat.png' },
+    { name: 'Elga Events', logoSrc: '/images/logos/Elga.png' },
   ] as const;
 
   const sliderRef = useRef<HTMLDivElement | null>(null);
@@ -77,6 +83,7 @@ Muziek in zijnen blote, oprecht en onversneden`,
                 <div className='flex items-center gap-2'>
                   <button
                     type='button'
+                    suppressHydrationWarning
                     onClick={() => scrollByCard('prev')}
                     aria-label='Vorige artiest'
                     className='inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25'
@@ -85,6 +92,7 @@ Muziek in zijnen blote, oprecht en onversneden`,
                   </button>
                   <button
                     type='button'
+                    suppressHydrationWarning
                     onClick={() => scrollByCard('next')}
                     aria-label='Volgende artiest'
                     className='inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25'
@@ -114,29 +122,29 @@ Muziek in zijnen blote, oprecht en onversneden`,
                     className={[
                       'snap-start',
                       'w-full shrink-0',
-                      'rounded-[20px] border border-white/10 bg-[#F39B3A] p-6 text-white',
+                      'relative overflow-hidden',
+                      'rounded-[28px] border border-white/10',
+                      'bg-[#F39B3A]',
                       'shadow-[0_26px_60px_-40px_rgba(0,0,0,0.55)]',
+                      'mx-3 sm:mx-4',
                     ].join(' ')}
                   >
-                    <div className='flex items-center justify-between text-[10px] font-extrabold uppercase tracking-[0.34em]'>
-                      <span>Live</span>
-                      <span>{a.time}</span>
-                    </div>
-                    <h3 className='mt-4 text-2xl font-extrabold uppercase tracking-[0.18em]'>
-                      {a.name}
-                    </h3>
+                    <div className='pointer-events-none absolute inset-0 opacity-[0.22] [background-image:linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0))]' />
+                    <div className='pointer-events-none absolute inset-0 rounded-[28px] ring-1 ring-white/10' />
 
-                    <div className='mt-5 grid gap-4 md:grid-cols-[200px_minmax(0,1fr)] md:items-center'>
-                      <div className='h-44 overflow-hidden rounded-[14px] bg-white/15 md:h-full'>
+                    <div className='absolute right-6 top-5 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white/90'>
+                      {a.time}
+                    </div>
+
+                    <div className='grid gap-7 px-7 py-9 sm:px-9 md:grid-cols-[270px_minmax(0,1fr)] md:items-center'>
+                      <div className='relative aspect-[4/3] w-full overflow-hidden rounded-[14px] bg-white/10'>
                         {a.imgSrc ? (
-                          <div className='relative h-full w-full'>
-                            <Image
-                              src={a.imgSrc}
-                              alt={a.name}
-                              fill
-                              className='object-contain p-2'
-                            />
-                          </div>
+                          <Image
+                            src={a.imgSrc}
+                            alt={a.name}
+                            fill
+                            className='object-contain p-2'
+                          />
                         ) : (
                           <div className='flex h-full w-full items-center justify-center text-[11px] font-semibold uppercase tracking-[0.24em] text-white/80'>
                             Foto
@@ -144,10 +152,16 @@ Muziek in zijnen blote, oprecht en onversneden`,
                         )}
                       </div>
 
-                      <div className='flex h-full items-start justify-center text-center'>
-                        <p className='whitespace-pre-line text-[14px] font-semibold leading-relaxed tracking-[0.02em] text-white/95'>
-                          {a.intro}
-                        </p>
+                      <div className='flex flex-col items-center text-center'>
+                        <h3 className='text-2xl font-extrabold uppercase leading-tight tracking-[0.08em] text-white sm:text-3xl sm:tracking-[0.16em]'>
+                          {a.name}
+                        </h3>
+
+                        <div className='mx-auto mt-5 max-w-[54ch]'>
+                          <p className='whitespace-pre-line text-[14px] font-semibold leading-relaxed tracking-[0.02em] text-white/95'>
+                            {a.intro}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -155,54 +169,85 @@ Muziek in zijnen blote, oprecht en onversneden`,
               </div>
             </div>
 
-            <div className='mt-8 grid gap-4 lg:grid-cols-2'>
-              <div className='border-white/12 rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>
+            <div className='mt-6 grid gap-4 lg:grid-cols-2'>
+              <div className='border-white/12 flex h-full flex-col rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>
                 <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/95'>
                   Tickets
                 </p>
                 <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  WeTickets + QR code
+                  Enkel beschikbaar via WeTicket
                 </p>
-                <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
-                  <Image
-                    src='/images/qr-code.png'
-                    alt='QR code tickets'
-                    width={80}
-                    height={80}
-                    className='h-20 w-20 object-contain'
-                  />
+                <div className='mt-5 flex flex-1 flex-col items-center justify-center'>
+                  <div className='h-32 w-32 overflow-hidden rounded-[22px] bg-white/20'>
+                    <Image
+                      src='/images/qr-code.png'
+                      alt='QR code tickets'
+                      width={128}
+                      height={128}
+                      className='h-32 w-32 object-contain'
+                    />
+                  </div>
+                  <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
+                    Scan voor tickets
+                  </p>
                 </div>
-                <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
-                  Scan voor tickets
-                </p>
+                <a
+                  href='https://heindonk-feest.weticket.io'
+                  target='_blank'
+                  rel='noreferrer'
+                  className='mt-6 inline-flex h-12 items-center justify-center self-center rounded-full bg-white/20 px-6 text-[11px] font-extrabold uppercase tracking-[0.3em] text-white transition hover:bg-white/30'
+                >
+                  Koop tickets
+                </a>
               </div>
 
-              <div className='border-white/12 rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/80'>
-                  VIP arrangement
-                </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  Via sponsoring
-                </p>
+              <div className='grid gap-4'>
+                <div className='flex h-full flex-col rounded-[24px] border border-white/35 bg-[linear-gradient(160deg,rgba(255,255,255,0.22),rgba(255,255,255,0.08))] px-6 py-6 text-center shadow-[0_24px_70px_-45px_rgba(0,0,0,0.9)]'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
+                    VIP arrangement
+                  </p>
+                  <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                    Via sponsoring
+                  </p>
 
-                <a
-                  href='/sponsorpakketten'
-                  className='mt-5 inline-flex h-12 items-center justify-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
-                >
-                  Bekijk VIP mogelijkheden
-                </a>
+                  <a
+                    href='/sponsorpakketten'
+                    className='mt-5 inline-flex h-12 items-center justify-center rounded-full border border-white/45 bg-white/25 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/35 active:scale-[0.99]'
+                  >
+                    Bekijk VIP mogelijkheden
+                  </a>
+                </div>
 
-                <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
-                  Support the cause &bull; Support the club
-                </p>
+                <div className='rounded-[24px] border border-white/20 bg-white/10 px-6 py-6 text-center'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/85'>
+                    Foodtrucks & info
+                  </p>
+                  <div className='mt-4 grid gap-3 sm:grid-cols-2'>
+                    {foodtrucks.map((truck) => (
+                      <div
+                        key={truck.name}
+                        className='rounded-[16px] border border-white/20 bg-white/10 px-4 py-4'
+                      >
+                        <div className='relative mx-auto h-14 w-14 overflow-hidden rounded-full bg-white/20'>
+                          <Image
+                            src={truck.logoSrc}
+                            alt={truck.name}
+                            fill
+                            className='object-contain p-2'
+                          />
+                        </div>
+                        <p className='mt-3 text-[10px] font-extrabold uppercase tracking-[0.24em] text-white'>
+                          {truck.name}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80'>
+                    Sport, spel en muziek &bull; Support the cause
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className='px-6 py-4 text-center'>
-            <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/75'>
-              Sport, spel en muziek &bull; Foodtrucks
-            </p>
           </div>
         </div>
       </div>
