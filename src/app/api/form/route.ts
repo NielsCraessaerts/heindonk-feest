@@ -12,6 +12,34 @@ const schema = z.object({
   opmerkingen: z.string().optional().default(""),
 });
 
+function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function nl2br(value: string) {
+  return escapeHtml(value).replaceAll("\n", "<br/>");
+}
+
+function emailShell(title: string, content: string, subtitle?: string) {
+  return `
+    <div style="margin:0;padding:24px;background:#eef3fb;">
+      <div style="max-width:680px;margin:0 auto;border:1px solid #d5e0f3;border-radius:16px;overflow:hidden;background:#ffffff;font-family:Arial,Helvetica,sans-serif;color:#17345f;">
+        <div style="padding:20px 24px;background:linear-gradient(145deg,#2e5daa,#4f79c1);color:#ffffff;">
+          <p style="margin:0;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;opacity:0.9;">Heindonk Feest</p>
+          <h1 style="margin:10px 0 0;font-size:22px;line-height:1.25;">${title}</h1>
+          ${subtitle ? `<p style="margin:10px 0 0;font-size:13px;line-height:1.5;opacity:0.95;">${subtitle}</p>` : ""}
+        </div>
+        <div style="padding:20px 24px 24px;">${content}</div>
+      </div>
+    </div>
+  `;
+}
+
 export async function POST(req: Request) {
   try {
     const json = await req.json();
@@ -27,41 +55,56 @@ export async function POST(req: Request) {
       );
     }
 
-    const subject = `VKH Tornooi inschrijving – ${data.teamnaam} (${data.competitie})`;
+    const subject = `VKH Tornooi inschrijving - ${data.teamnaam} (${data.competitie})`;
+    const opmerkingen = data.opmerkingen?.trim() || "Geen opmerkingen";
 
-    const html = `
-      <div style="font-family: ui-sans-serif, system-ui; line-height:1.5">
-        <h2>Nieuwe inschrijving Voetbaltornooi</h2>
-        <p><b>Competitie:</b> ${data.competitie}</p>
-        <p><b>Teamnaam:</b> ${data.teamnaam}</p>
-        <p><b>Teamverantwoordelijke:</b> ${data.teamverantwoordelijke}</p>
-        <p><b>E-mail:</b> ${data.email}</p>
-        <p><b>Telefoon:</b> ${data.telefoon}</p>
-        <p><b>Opmerkingen:</b><br/>${(data.opmerkingen || "").replaceAll("\n", "<br/>")}</p>
-      </div>
-    `;
+    const orgHtml = emailShell(
+      "Nieuwe inschrijving Voetbaltornooi",
+      `
+        <div style="border:1px solid #dbe5f5;border-radius:12px;padding:14px 16px;background:#f7faff;">
+          <table role="presentation" style="width:100%;border-collapse:collapse;">
+            <tbody>
+              <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Competitie</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#1f4e97;">${escapeHtml(data.competitie)}</td></tr>
+              <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Teamnaam</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.teamnaam)}</td></tr>
+              <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Verantwoordelijke</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.teamverantwoordelijke)}</td></tr>
+              <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">E-mail</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.email)}</td></tr>
+              <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Telefoon</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.telefoon)}</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:14px;border:1px solid #dbe5f5;border-radius:12px;padding:14px 16px;background:#ffffff;">
+          <p style="margin:0 0 8px;font-size:12px;color:#4d6488;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Opmerkingen</p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#17345f;">${nl2br(opmerkingen)}</p>
+        </div>
+      `
+    );
 
-    // 1) Mail naar organisatie
     await resend.emails.send({
       from,
       to,
       subject,
       replyTo: data.email,
-      html,
+      html: orgHtml,
     });
 
-    // 2) Bevestiging naar inschrijver (optioneel maar nice)
+    const attendeeHtml = emailShell(
+      "Inschrijving ontvangen",
+      `
+        <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#17345f;">We hebben jullie inschrijving goed ontvangen.</p>
+        <div style="border:1px solid #dbe5f5;border-radius:12px;padding:14px 16px;background:#f7faff;">
+          <p style="margin:0;font-size:13px;color:#4d6488;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Team</p>
+          <p style="margin:8px 0 0;font-size:16px;color:#17345f;font-weight:700;">${escapeHtml(data.teamnaam)} <span style="color:#1f4e97;">(${escapeHtml(data.competitie)})</span></p>
+        </div>
+        <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#17345f;">Betalingsinfo volgt via mail. Bedankt voor jullie inschrijving.</p>
+      `,
+      "Voetbaltornooi VK Heindonk"
+    );
+
     await resend.emails.send({
       from,
       to: data.email,
-      subject: `Bevestiging inschrijving – ${data.teamnaam}`,
-      html: `
-        <div style="font-family: ui-sans-serif, system-ui; line-height:1.5">
-          <p>We hebben jullie inschrijving goed ontvangen.</p>
-          <p><b>Team:</b> ${data.teamnaam} – <b>${data.competitie}</b></p>
-          <p>Betalingsinfo volgt via mail. Bedankt!</p>
-        </div>
-      `,
+      subject: `Bevestiging inschrijving - ${data.teamnaam}`,
+      html: attendeeHtml,
     });
 
     return Response.json({ ok: true });
