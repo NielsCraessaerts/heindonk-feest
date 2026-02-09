@@ -14,8 +14,13 @@ export default function WkKubbSection() {
               <p className='mt-4 text-[12px] font-semibold uppercase tracking-[0.28em] text-white/90'>
                 Willebroeks Kampioenschap
               </p>
-              <div className='mt-5 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white'>
-                Open inschrijvingen
+              <div className='mt-5 flex flex-wrap items-center justify-center gap-2'>
+                <span className='inline-flex rounded-full bg-white/20 px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white'>
+                  Open inschrijvingen
+                </span>
+                <span className='inline-flex rounded-full bg-white/20 px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.3em] text-white'>
+                  Voor familie-, amateur- en gelegenheidsploegen
+                </span>
               </div>
             </div>
           </div>
@@ -133,8 +138,18 @@ export default function WkKubbSection() {
                   <p className='mt-5 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/85'>
                     Prijs
                   </p>
-                  <p className='mt-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white'>
-                    Ploeg van 4 tot 6 personen: EUR 20
+                  <p className='mt-2 flex flex-col items-start gap-2 text-[11px] font-extrabold uppercase tracking-[0.12em] text-white sm:flex-row sm:items-center sm:gap-3 sm:tracking-[0.18em]'>
+                    <span>Ploeg van 4 tot 6 personen:</span>
+                    <span className='inline-flex shrink-0 rounded-full bg-[#F39B3A] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white sm:tracking-[0.2em]'>
+                      EUR 20
+                    </span>
+                  </p>
+                  <p className='mt-3 pt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Na inschrijving van uw ploeg gelieve te betalen via Weticket
+                  </p>
+                  <p className='mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Inschrijving is pas definitief na betaling en confirmatie
+                    van de organisatie
                   </p>
                 </div>
 

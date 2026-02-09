@@ -1,9 +1,29 @@
+import { Bike, Car, Footprints } from 'lucide-react';
+import Image from 'next/image';
+
 const PRAKTISCH = {
-  address: 'Terrein VK Heindonk, Heindonk (Willebroek)',
-  email: 'info@heindonk-feest.be',
-  phoneDisplay: '+32 470 00 00 00',
-  phoneHref: '+32470000000',
-  mapsQuery: 'Terrein VK Heindonk, Willebroek',
+  address: 'Terreinen VK Heindonk, Kleine Bergen 1, 2830 Heindonk',
+  email: 'heindonk_feest@hotmail.com',
+  mapsQuery: 'Terreinen VK Heindonk, Kleine Bergen 1, 2830 Heindonk',
+  accessibility: [
+    {
+      label: 'Fiets',
+      value: `Fietsenstalling voorzien aan het terrein.
+      Deze is onbewaakt.`,
+      icon: Bike,
+    },
+    {
+      label: 'Auto',
+      value: `Parking is voorzien op een aanpalende weide.
+      Bij regenweer of wanneer deze parking vol is, voorzien we een overloopparking op 5 � 10 minuten wandelen.`,
+      icon: Car,
+    },
+    {
+      label: 'Te voet',
+      value: `het eenvoudigste en veiligste vervoersmiddel om 's nachts na het feestgedruis (en het nodige vocht) terug thuis te geraken.`,
+      icon: Footprints,
+    },
+  ],
 };
 
 export default function PraktischPage() {
@@ -35,49 +55,96 @@ export default function PraktischPage() {
             />
           </div>
 
-          <p className='mt-4 text-center text-[11px] font-semibold uppercase tracking-[0.28em] text-white/80'>
-            {PRAKTISCH.address}
-          </p>
+          <div className='mt-6 rounded-[20px] px-5 py-5'>
+            <p className='text-center text-[12px] font-extrabold uppercase tracking-[0.2em] text-[#F39B3A]'>
+              Hoe het evenement bereiken:
+            </p>
+            <div className='mt-4 grid gap-3 md:grid-cols-3'>
+              {PRAKTISCH.accessibility.map((item) => (
+                <div
+                  key={item.label}
+                  className='rounded-[16px] border border-white/20 bg-white/10 px-4 py-4 text-center'
+                >
+                  <div className='mx-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-[#F39B3A]'>
+                    <item.icon size={20} />
+                  </div>
+                  <p className='mt-3 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
+                    {item.label}
+                  </p>
+                  <p className='mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85'>
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
-        <section className='block-anim delay-2 mt-6 rounded-[28px] bg-white/10 p-6 sm:p-8'>
-          <h2 className='text-center text-2xl font-extrabold uppercase tracking-[0.14em] sm:text-3xl'>
+        <section className='block-anim delay-2 mt-6 rounded-[28px] bg-white/10 p-5 sm:p-8'>
+          <h2 className='text-center text-xl font-extrabold uppercase tracking-[0.1em] sm:text-3xl sm:tracking-[0.14em]'>
             Contact
           </h2>
 
-          <div className='mt-6 grid gap-4 md:grid-cols-3'>
+          <div className='mt-5 grid gap-3 md:grid-cols-2'>
             <a
               href={`mailto:${PRAKTISCH.email}`}
-              className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-5 text-center transition hover:bg-white/15'
+              className='rounded-[20px] border border-white/20 bg-white/10 px-4 py-4 text-center transition hover:bg-white/15 sm:px-5 sm:py-5'
             >
-              <p className='text-[10px] font-semibold uppercase tracking-[0.34em] text-white/75'>
+              <p className='text-[9px] font-semibold uppercase tracking-[0.26em] text-white/75 sm:text-[10px] sm:tracking-[0.34em]'>
                 E-mail
               </p>
-              <p className='mt-3 text-[12px] font-extrabold tracking-[0.08em] text-white'>
+              <p className='mt-3 break-all text-[11px] font-extrabold tracking-[0.03em] text-white sm:text-[12px] sm:tracking-[0.08em]'>
                 {PRAKTISCH.email}
               </p>
             </a>
 
-            <div className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-5 text-center'>
-              <p className='text-[10px] font-semibold uppercase tracking-[0.34em] text-white/75'>
+            <div className='rounded-[20px] border border-white/20 bg-white/10 px-4 py-4 text-center sm:px-5 sm:py-5'>
+              <p className='text-[9px] font-semibold uppercase tracking-[0.26em] text-white/75 sm:text-[10px] sm:tracking-[0.34em]'>
                 Locatie
               </p>
-              <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.16em] text-white'>
+              <p className='mt-3 text-[11px] font-extrabold leading-snug tracking-[0.06em] text-white sm:text-[12px] sm:uppercase sm:tracking-[0.16em]'>
                 {PRAKTISCH.address}
               </p>
             </div>
+          </div>
+        </section>
 
-            <a
-              href={`tel:${PRAKTISCH.phoneHref}`}
-              className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-5 text-center transition hover:bg-white/15'
-            >
-              <p className='text-[10px] font-semibold uppercase tracking-[0.34em] text-white/75'>
-                Telefoon
+        <section className='block-anim mt-6 rounded-[28px] bg-white/10 p-6 sm:p-8'>
+          <h2 className='text-center text-2xl font-extrabold uppercase tracking-[0.14em] sm:text-3xl'>
+            Organisatie
+          </h2>
+          <p className='mx-auto mt-4 max-w-3xl px-5 py-4 text-center text-[11px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-white/90'>
+            Heindonk Feest! is een organisatie van KF Iever Maakt Vooruitgang
+            vzw Heindonk en VK Heindonk
+          </p>
+          <div className='mt-6 grid gap-4 sm:grid-cols-2'>
+            <div className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-6 text-center'>
+              <div className='relative mx-auto h-24 w-24 sm:h-28 sm:w-28'>
+                <Image
+                  src='/images/logos/fanfare-logo.png'
+                  alt='Logo KF Iever Maakt Vooruitgang'
+                  fill
+                  className='object-contain'
+                />
+              </div>
+              <p className='mt-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
+                KF Iever Maakt Vooruitgang
               </p>
-              <p className='mt-3 text-[12px] font-extrabold tracking-[0.08em] text-white'>
-                {PRAKTISCH.phoneDisplay}
+            </div>
+
+            <div className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-6 text-center'>
+              <div className='relative mx-auto h-24 w-24 sm:h-28 sm:w-28'>
+                <Image
+                  src='/images/logos/voetbal_logo.png'
+                  alt='Logo VK Heindonk'
+                  fill
+                  className='object-contain'
+                />
+              </div>
+              <p className='mt-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
+                VK Heindonk
               </p>
-            </a>
+            </div>
           </div>
         </section>
       </div>

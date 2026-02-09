@@ -75,7 +75,7 @@ export default function VoetbaltoernooiForm() {
       <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <div className='relative overflow-hidden rounded-[28px]'>
           <div className='relative px-6 py-10 text-center sm:px-12'>
-            <h2 className='mt-4 break-words text-2xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em]'>
+            <h2 className='mt-4 text-xl font-extrabold uppercase leading-tight tracking-[0.06em] sm:text-3xl sm:tracking-[0.1em] md:text-4xl lg:text-5xl lg:tracking-[0.16em]'>
               Voetbaltornooi
             </h2>
             <div className='mx-auto mt-4 h-px w-28 bg-white/40' />
@@ -225,14 +225,20 @@ export default function VoetbaltoernooiForm() {
                   </p>
                 </div>
                 <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
-                  Bij overschrijving: ploegnaam verplicht vermelden in de
-                  mededeling.
+                  Graag ploegnaam vermelden bij overschrijving.
+                </p>
+                <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                  Inschrijving is pas definitief na betaling en confirmatie van
+                  de organisatie.
                 </p>
               </div>
 
               <div className='rounded-[18px] bg-white/10 px-5 py-4'>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.2em] text-white'>
-                  Prijs per ploeg: EUR 350
+                <p className='mt-3 flex flex-col items-start gap-2 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white sm:flex-row sm:items-center sm:gap-3 sm:text-[12px] sm:tracking-[0.2em]'>
+                  <span>Prijs per ploeg:</span>
+                  <span className='inline-flex shrink-0 rounded-full bg-[#F39B3A] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white sm:tracking-[0.2em]'>
+                    EUR 350
+                  </span>
                 </p>
                 <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80'>
                   Inbegrepen:

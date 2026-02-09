@@ -25,7 +25,7 @@ export default function MainHeading() {
           <div className='pointer-events-none absolute left-6 top-6 hidden md:block'>
             <div className='relative h-16 w-16 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
               <Image
-                src='/images/logos/fanfare_logo.png'
+                src='/images/logos/fanfare-logo.png'
                 alt='Koninklijke Fanfare Iever Maakt Vooruitgang'
                 fill
                 className='object-contain p-2'
@@ -120,7 +120,7 @@ export default function MainHeading() {
             >
               <Button
                 asChild
-                className='w-full rounded-full px-8 py-6 text-sm font-semibold uppercase tracking-[0.22em] sm:w-auto'
+                className='w-full rounded-full border border-white/35 bg-[#5D84C6] px-8 py-6 text-sm font-semibold uppercase tracking-[0.22em] text-white hover:bg-[#6A92D6] sm:w-auto'
               >
                 <Link href='#programma'>Bekijk programma</Link>
               </Button>

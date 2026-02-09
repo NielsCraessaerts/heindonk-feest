@@ -174,19 +174,8 @@ export default function SponsorpakkettenPage() {
           </Swiper>
         </section>
 
-        <section className='block-anim mt-6 rounded-[24px] border border-white/20 bg-white/10 px-6 py-6 text-center'>
-          <p className='text-[10px] font-semibold uppercase tracking-[0.32em] text-white/75'>
-            Losse tickets
-          </p>
-          <div className='mt-3 flex flex-col items-center gap-4'>
-            <a
-              href='https://heindonk-feest.weticket.io'
-              target='_blank'
-              rel='noreferrer'
-              className='text-[12px] font-extrabold uppercase tracking-[0.2em] text-white underline decoration-white/70 underline-offset-4 transition hover:decoration-white'
-            >
-              Tickets enkel beschikbaar via heindonk-feest.weticket.io
-            </a>
+        <section className='block-anim mt-6 rounded-[24px] px-6 py-6 text-center'>
+          <div className='flex flex-col items-center gap-4'>
             <a
               href='/files/Heindonk%20Feest!%20Sponsordossier%20v1.00.docx'
               className='inline-flex rounded-full border border-white/50 px-6 py-3 text-[11px] font-extrabold uppercase tracking-[0.28em] text-white transition hover:bg-white/10'
