@@ -6,6 +6,11 @@ import { useRef } from 'react';
 
 import { Button } from '@/components/ui/button';
 
+const ORGANISATIE_LINKS = {
+  fanfare: 'https://ievermaaktvooruitgang.com/',
+  voetbal: 'https://www.vkheindonk.com/',
+};
+
 export default function MainHeading() {
   const rootRef = useRef<HTMLElement | null>(null);
 
@@ -22,7 +27,13 @@ export default function MainHeading() {
         {/* Poster panel */}
         <div className='relative mx-auto max-w-5xl overflow-hidden rounded-[24px] border border-secondary/20 bg-white/60 px-[clamp(18px,3vw,48px)] py-[clamp(22px,3.6vw,56px)] shadow-[0_70px_160px_-90px_rgba(0,0,0,0.55)] backdrop-blur sm:rounded-[28px]'>
           {/* corner logos (desktop only, keep) */}
-          <div className='pointer-events-none absolute left-6 top-6 hidden md:block'>
+          <a
+            href={ORGANISATIE_LINKS.fanfare}
+            target='_blank'
+            rel='noreferrer'
+            aria-label='Koninklijke Fanfare Iever Maakt Vooruitgang'
+            className='absolute left-6 top-6 hidden rounded-full transition hover:scale-[1.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 md:block'
+          >
             <div className='relative h-16 w-16 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
               <Image
                 src='/images/logos/fanfare-logo.png'
@@ -33,8 +44,14 @@ export default function MainHeading() {
                 priority
               />
             </div>
-          </div>
-          <div className='pointer-events-none absolute right-6 top-6 hidden md:block'>
+          </a>
+          <a
+            href={ORGANISATIE_LINKS.voetbal}
+            target='_blank'
+            rel='noreferrer'
+            aria-label='VK Heindonk'
+            className='absolute right-6 top-6 hidden rounded-full transition hover:scale-[1.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 md:block'
+          >
             <div className='relative h-16 w-16 overflow-hidden rounded-full bg-white/70 ring-1 ring-secondary/25'>
               <Image
                 src='/images/logos/voetbal_logo.png'
@@ -45,7 +62,7 @@ export default function MainHeading() {
                 priority
               />
             </div>
-          </div>
+          </a>
 
           {/* top presenter lines */}
           <div data-anim='top' className='text-center'>

@@ -109,6 +109,12 @@ export default function SponsorpakkettenPage() {
           <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/80'>
             Kies het pakket dat bij uw bedrijf past
           </p>
+          <a
+            href='/files/Heindonk%20Feest!%20Sponsordossier%20v1.00.pdf'
+            className='mt-6 inline-flex rounded-full bg-[#F39B3A] px-7 py-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white shadow-[0_16px_40px_-20px_rgba(243,155,58,0.9)] transition hover:brightness-110'
+          >
+            Download sponsordossier
+          </a>
         </section>
 
         <section className='block-anim delay-2 mt-6'>
@@ -174,14 +180,57 @@ export default function SponsorpakkettenPage() {
           </Swiper>
         </section>
 
-        <section className='block-anim mt-6 rounded-[24px] px-6 py-6 text-center'>
-          <div className='flex flex-col items-center gap-4'>
-            <a
-              href='/files/Heindonk%20Feest!%20Sponsordossier%20v1.00.docx'
-              className='inline-flex rounded-full border border-white/50 px-6 py-3 text-[11px] font-extrabold uppercase tracking-[0.28em] text-white transition hover:bg-white/10'
-            >
-              Download sponsordossier
-            </a>
+        <section className='block-anim mt-6 rounded-[24px] py-6 text-center'>
+          <div className='rounded-[24px] border border-white/20 bg-white/10 px-5 py-6 text-left sm:px-6'>
+            <p className='text-center text-[11px] font-extrabold uppercase tracking-[0.22em] text-white sm:text-left'>
+              Contact bij interesse
+            </p>
+            <p className='mt-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
+              Bij interesse in een van onze sponsorpakketten of
+              VIP-arrangementen kan u contact opnemen met:
+            </p>
+            <div className='mt-4 grid gap-3 md:grid-cols-2'>
+              <div className='rounded-[16px] border border-white/20 bg-[#F39B3A] px-4 py-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/90'>
+                <p className='font-extrabold text-white'>
+                  Gert Boschmans / VK Heindonk
+                </p>
+                <p className='mt-1'>
+                  <a
+                    href='mailto:Gert.Boschmans@telenet.be'
+                    className='underline decoration-white/40 underline-offset-4 hover:decoration-white'
+                  >
+                    Gert.Boschmans@telenet.be
+                  </a>{' '}
+                  -{' '}
+                  <a
+                    href='tel:+32477777435'
+                    className='underline decoration-white/40 underline-offset-4 hover:decoration-white'
+                  >
+                    0477 77 74 35
+                  </a>
+                </p>
+              </div>
+              <div className='rounded-[16px] border border-white/20 bg-[#F39B3A] px-4 py-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-white/90'>
+                <p className='font-extrabold text-white'>
+                  Joris Craessaerts / KF Iever Maakt Vooruitgang vzw
+                </p>
+                <p className='mt-1'>
+                  <a
+                    href='mailto:Joris.Craessaerts@telenet.be'
+                    className='underline decoration-white/40 underline-offset-4 hover:decoration-white'
+                  >
+                    Joris.Craessaerts@telenet.be
+                  </a>{' '}
+                  -{' '}
+                  <a
+                    href='tel:+32478959788'
+                    className='underline decoration-white/40 underline-offset-4 hover:decoration-white'
+                  >
+                    0478 95 97 88
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </div>

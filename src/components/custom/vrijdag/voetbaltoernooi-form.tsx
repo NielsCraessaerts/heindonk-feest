@@ -227,6 +227,17 @@ export default function VoetbaltoernooiForm() {
                 <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
                   Graag ploegnaam vermelden bij overschrijving.
                 </p>
+                <div className='mt-4 rounded-[14px] border border-white/35 bg-white/20 px-4 py-3'>
+                  <p className='text-[9px] font-extrabold uppercase tracking-[0.28em] text-white/85'>
+                    Overschrijving
+                  </p>
+                  <p className='mt-2 inline-flex rounded-full bg-[#5D84C6] px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white'>
+                    BE70 1036 0326 7825
+                  </p>
+                  <p className='mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/90'>
+                    Op naam van KF Iever Maakt Vooruitgang Heindonk vzw
+                  </p>
+                </div>
                 <p className='mt-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
                   Inschrijving is pas definitief na betaling en confirmatie van
                   de organisatie.

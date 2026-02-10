@@ -1,3 +1,4 @@
+import SponsorsStrip from '@/components/custom/sponsors';
 import ZondagBrunch from '@/components/custom/zondag/brunch';
 import ZondagGalawedstrijd from '@/components/custom/zondag/galawedstrijd';
 
@@ -16,6 +17,9 @@ export default function ZondagPage() {
           </div>
           <div className='block-anim delay-2'>
             <ZondagGalawedstrijd />
+          </div>
+          <div className='block-anim delay-3'>
+            <SponsorsStrip />
           </div>
         </div>
       </div>

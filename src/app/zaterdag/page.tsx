@@ -2,6 +2,7 @@ import WkKubbSection from '@/components/custom/zaterdag/wk-kubben';
 import FamilienamiddagSection from '@/components/custom/zaterdag/familie-namiddag';
 import LiveOptredensSection from '@/components/custom/zaterdag/optredens';
 import FanfareFeestenSection from '@/components/custom/zaterdag/fanfare-feesten';
+import SponsorsStrip from '@/components/custom/sponsors';
 
 export default function ZaterdagPage() {
   return (
@@ -25,6 +26,7 @@ export default function ZaterdagPage() {
         <div className='block-anim delay-4'>
           <LiveOptredensSection />
         </div>
+        <SponsorsStrip />
       </div>
     </main>
   );

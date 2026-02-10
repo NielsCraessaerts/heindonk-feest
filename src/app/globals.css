@@ -142,7 +142,8 @@
 }
 
 .logo-marquee-track {
-  animation: logoMarquee 20s linear infinite;
+  will-change: transform;
+  animation: logoMarquee var(--logo-marquee-duration, 20s) linear infinite;
 }
 
 @keyframes logoMarquee {
@@ -150,7 +151,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(var(--logo-marquee-shift, -50%));
   }
 }
 

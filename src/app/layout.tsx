@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/custom/header';
 import { libre, lobster } from '@/styles/font';
 import SiteScripts from '@/components/custom/site-scripts';
+import Footer from '@/components/custom/footer';
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
@@ -69,6 +70,7 @@ export default function RootLayout({
         <Analytics />
         <Header />
         {children}
+        <Footer />
         <SiteScripts />
       </body>
     </html>

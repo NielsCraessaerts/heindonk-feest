@@ -26,6 +26,11 @@ const PRAKTISCH = {
   ],
 };
 
+const ORGANISATIE_LINKS = {
+  fanfare: 'https://ievermaaktvooruitgang.com/',
+  voetbal: 'https://www.vkheindonk.com/',
+};
+
 export default function PraktischPage() {
   return (
     <main className='relative min-h-screen text-white'>
@@ -93,7 +98,7 @@ export default function PraktischPage() {
               <p className='text-[9px] font-semibold uppercase tracking-[0.26em] text-white/75 sm:text-[10px] sm:tracking-[0.34em]'>
                 E-mail
               </p>
-              <p className='mt-3 break-all text-[11px] font-extrabold tracking-[0.03em] text-white sm:text-[12px] sm:tracking-[0.08em]'>
+              <p className='mt-3 break-all text-[11px] font-extrabold uppercase tracking-[0.03em] text-white sm:text-[12px] sm:tracking-[0.08em]'>
                 {PRAKTISCH.email}
               </p>
             </a>
@@ -115,32 +120,48 @@ export default function PraktischPage() {
           </h2>
           <p className='mx-auto mt-4 max-w-3xl px-5 py-4 text-center text-[11px] font-semibold uppercase leading-relaxed tracking-[0.16em] text-white/90'>
             Heindonk Feest! is een organisatie van KF Iever Maakt Vooruitgang
-            vzw Heindonk en VK Heindonk
+            vzw en VK Heindonk
           </p>
           <div className='mt-6 grid gap-4 sm:grid-cols-2'>
             <div className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-6 text-center'>
-              <div className='relative mx-auto h-24 w-24 sm:h-28 sm:w-28'>
-                <Image
-                  src='/images/logos/fanfare-logo.png'
-                  alt='Logo KF Iever Maakt Vooruitgang'
-                  fill
-                  className='object-contain'
-                />
-              </div>
+              <a
+                href={ORGANISATIE_LINKS.fanfare}
+                target='_blank'
+                rel='noreferrer'
+                aria-label='KF Iever Maakt Vooruitgang'
+                className='mx-auto block w-fit rounded-full transition hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80'
+              >
+                <div className='relative mx-auto h-24 w-24 sm:h-28 sm:w-28'>
+                  <Image
+                    src='/images/logos/fanfare-logo.png'
+                    alt='Logo KF Iever Maakt Vooruitgang'
+                    fill
+                    className='object-contain'
+                  />
+                </div>
+              </a>
               <p className='mt-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
                 KF Iever Maakt Vooruitgang
               </p>
             </div>
 
             <div className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-6 text-center'>
-              <div className='relative mx-auto h-24 w-24 sm:h-28 sm:w-28'>
-                <Image
-                  src='/images/logos/voetbal_logo.png'
-                  alt='Logo VK Heindonk'
-                  fill
-                  className='object-contain'
-                />
-              </div>
+              <a
+                href={ORGANISATIE_LINKS.voetbal}
+                target='_blank'
+                rel='noreferrer'
+                aria-label='VK Heindonk'
+                className='mx-auto block w-fit rounded-full transition hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80'
+              >
+                <div className='relative mx-auto h-24 w-24 sm:h-28 sm:w-28'>
+                  <Image
+                    src='/images/logos/voetbal_logo.png'
+                    alt='Logo VK Heindonk'
+                    fill
+                    className='object-contain'
+                  />
+                </div>
+              </a>
               <p className='mt-4 text-[11px] font-extrabold uppercase tracking-[0.2em] text-white'>
                 VK Heindonk
               </p>
