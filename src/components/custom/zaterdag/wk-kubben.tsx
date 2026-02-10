@@ -1,6 +1,67 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
+
+type Status = 'idle' | 'sending' | 'ok' | 'error';
 
 export default function WkKubbSection() {
+  const [status, setStatus] = useState<Status>('idle');
+  const [message, setMessage] = useState('');
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('sending');
+    setMessage('');
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    const payload = {
+      teamnaam: String(fd.get('teamnaam') ?? ''),
+      teamverantwoordelijke: String(fd.get('teamverantwoordelijke') ?? ''),
+      email: String(fd.get('email') ?? ''),
+      telefoon: String(fd.get('telefoon') ?? ''),
+      opmerkingen: String(fd.get('opmerkingen') ?? ''),
+    };
+
+    if (
+      !payload.teamnaam ||
+      !payload.teamverantwoordelijke ||
+      !payload.email ||
+      !payload.telefoon
+    ) {
+      setStatus('error');
+      setMessage(
+        'Vul alle verplichte velden in (ploegnaam, contact, mail, telefoon).'
+      );
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/kubben', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const json = await res.json().catch(() => null);
+
+      if (!res.ok || !json?.ok) {
+        throw new Error(json?.error || 'Verzenden mislukt. Probeer opnieuw.');
+      }
+
+      setStatus('ok');
+      setMessage(
+        'Inschrijving verzonden. Je ontvangt ook een bevestiging via e-mail.'
+      );
+      form.reset();
+    } catch (err: any) {
+      setStatus('error');
+      setMessage(err?.message ?? 'Er ging iets mis.');
+    }
+  }
+
   return (
     <section className='relative text-white'>
       <div className='mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
@@ -32,7 +93,7 @@ export default function WkKubbSection() {
                   Inschrijving
                 </p>
 
-                <form className='mt-4 grid gap-4'>
+                <form className='mt-4 grid gap-4' onSubmit={onSubmit}>
                   <label className='block'>
                     <span className='text-[10px] font-semibold uppercase tracking-[0.32em] text-white/80'>
                       Ploegnaam
@@ -99,10 +160,26 @@ export default function WkKubbSection() {
 
                   <button
                     type='submit'
+                    disabled={status === 'sending'}
                     className='mt-2 inline-flex w-full items-center justify-center rounded-full bg-white/20 px-6 py-3 text-[11px] font-extrabold uppercase tracking-[0.34em] text-white transition hover:bg-white/30'
                   >
-                    Inschrijven
+                    {status === 'sending' ? 'Verzenden...' : 'Inschrijven'}
                   </button>
+
+                  {status !== 'idle' && (
+                    <div
+                      className={`rounded-[16px] px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.2em] ${
+                        status === 'ok' ? 'bg-emerald-100 text-emerald-900' : ''
+                      } ${
+                        status === 'error' ? 'bg-rose-100 text-rose-900' : ''
+                      } ${
+                        status === 'sending' ? 'bg-white/80 text-[#1F4E97]' : ''
+                      }`}
+                    >
+                      {message ||
+                        (status === 'sending' ? 'Bezig met verzenden...' : '')}
+                    </div>
+                  )}
                 </form>
               </div>
 

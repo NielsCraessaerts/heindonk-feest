@@ -19,7 +19,7 @@ export default function LiveOptredensSection() {
     },
     {
       name: 'Eigen Kweek',
-      time: '22:30',
+      time: '22:20',
       imgSrc: '/images/eigenkweek.png',
       intro: `Eigenkweek is het resultaat van een uitgekiend kweekprogramma want het bestaat uitsluitend uit leden van de familie Vangrunderbeek.
       De groep werd wereldberoemd in Zemst en omstreken dankzij een legendarisch optreden in café De Kroeg in september 2019 en sindsdien zijn ze niet meer te stoppen.`,

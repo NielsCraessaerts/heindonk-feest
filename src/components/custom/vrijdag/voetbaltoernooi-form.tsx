@@ -47,7 +47,7 @@ export default function VoetbaltoernooiForm() {
     }
 
     try {
-      const res = await fetch('/api/form', {
+      const res = await fetch('/api/voetbal', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

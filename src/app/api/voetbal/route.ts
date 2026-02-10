@@ -55,6 +55,11 @@ export async function POST(req: Request) {
       );
     }
 
+    const tournamentFee = "EUR 350";
+    const paymentIban =
+      process.env.TOURNAMENT_PAYMENT_IBAN || "BE00 0000 0000 0000";
+    const paymentName = process.env.TOURNAMENT_PAYMENT_NAME || "VK Heindonk";
+
     const subject = `VKH Tornooi inschrijving - ${data.teamnaam} (${data.competitie})`;
     const opmerkingen = data.opmerkingen?.trim() || "Geen opmerkingen";
 
@@ -90,12 +95,26 @@ export async function POST(req: Request) {
     const attendeeHtml = emailShell(
       "Inschrijving ontvangen",
       `
-        <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#17345f;">We hebben jullie inschrijving goed ontvangen.</p>
+        <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#17345f;">Bedankt voor jullie inschrijving voor het voetbaltornooi.</p>
         <div style="border:1px solid #dbe5f5;border-radius:12px;padding:14px 16px;background:#f7faff;">
           <p style="margin:0;font-size:13px;color:#4d6488;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Team</p>
           <p style="margin:8px 0 0;font-size:16px;color:#17345f;font-weight:700;">${escapeHtml(data.teamnaam)} <span style="color:#1f4e97;">(${escapeHtml(data.competitie)})</span></p>
         </div>
-        <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#17345f;">Betalingsinfo volgt via mail. Bedankt voor jullie inschrijving.</p>
+        <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#17345f;">
+          Belangrijk: jullie inschrijving is pas officieel nadat het inschrijvingsgeld werd overgeschreven en jullie een bevestigingsmail van de organisatie hebben ontvangen.
+        </p>
+        <div style="margin-top:14px;border:1px solid #dbe5f5;border-radius:12px;padding:14px 16px;background:#ffffff;">
+          <p style="margin:0 0 8px;font-size:12px;color:#4d6488;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Betaalgegevens</p>
+          <p style="margin:0;font-size:14px;line-height:1.8;color:#17345f;">
+            Rekeninghouder: <strong>${escapeHtml(paymentName)}</strong><br/>
+            Rekeningnummer: <strong>${escapeHtml(paymentIban)}</strong><br/>
+            Bedrag: <strong>${escapeHtml(tournamentFee)}</strong><br/>
+            Mededeling: <strong>${escapeHtml(data.teamnaam)} - ${escapeHtml(data.competitie)}</strong>
+          </p>
+        </div>
+        <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#17345f;">
+          Na ontvangst van de betaling sturen we jullie de definitieve bevestiging via e-mail.
+        </p>
       `,
       "Voetbaltornooi VK Heindonk"
     );

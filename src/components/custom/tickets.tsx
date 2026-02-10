@@ -3,6 +3,7 @@ import Image from 'next/image';
 type Foodtruck = {
   name: string;
   logoSrc: string;
+  href?: string;
 };
 
 type TicketsInfoBlockProps = {
@@ -13,8 +14,16 @@ type TicketsInfoBlockProps = {
 };
 
 const defaultFoodtrucks: readonly Foodtruck[] = [
-  { name: 'Vroempatat', logoSrc: '/images/logos/vroempatat.png' },
-  { name: 'Elga Events', logoSrc: '/images/logos/Elga.png' },
+  {
+    name: 'Vroempatat',
+    logoSrc: '/images/logos/vroempatat.png',
+    href: 'https://www.vroempatat.com',
+  },
+  {
+    name: 'Elga Events',
+    logoSrc: '/images/logos/Elga.png',
+    href: 'https://www.instagram.com/elgaevents',
+  },
 ];
 
 export default function TicketsInfoBlock({
@@ -93,14 +102,33 @@ export default function TicketsInfoBlock({
                 key={truck.name}
                 className='rounded-[16px] border border-white/20 bg-white/10 px-4 py-4'
               >
-                <div className='relative mx-auto h-14 w-14 overflow-hidden rounded-full bg-white/20'>
-                  <Image
-                    src={truck.logoSrc}
-                    alt={truck.name}
-                    fill
-                    className='object-contain p-2'
-                  />
-                </div>
+                {truck.href ? (
+                  <a
+                    href={truck.href}
+                    target='_blank'
+                    rel='noreferrer'
+                    aria-label={`${truck.name} website`}
+                    className='mx-auto block h-14 w-14 rounded-full transition hover:scale-[1.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80'
+                  >
+                    <div className='relative h-14 w-14 overflow-hidden rounded-full bg-white/20'>
+                      <Image
+                        src={truck.logoSrc}
+                        alt={truck.name}
+                        fill
+                        className='object-contain p-2'
+                      />
+                    </div>
+                  </a>
+                ) : (
+                  <div className='relative mx-auto h-14 w-14 overflow-hidden rounded-full bg-white/20'>
+                    <Image
+                      src={truck.logoSrc}
+                      alt={truck.name}
+                      fill
+                      className='object-contain p-2'
+                    />
+                  </div>
+                )}
                 <p className='mt-3 text-[10px] font-extrabold uppercase tracking-[0.24em] text-white'>
                   {truck.name}
                 </p>

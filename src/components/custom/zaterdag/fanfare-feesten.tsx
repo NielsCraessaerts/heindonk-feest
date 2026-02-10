@@ -68,7 +68,7 @@ export default function FanfareFeestenSection() {
 
                 <div className='relative overflow-hidden rounded-[18px] bg-[#F39B3A] px-4 py-4 text-center sm:px-5 sm:py-5'>
                   <p className='text-[10px] font-semibold uppercase tracking-[0.3em] text-white/90 sm:text-[11px]'>
-                    Deelnemende fanfares
+                    Deelnemende muziekverenigingen
                   </p>
 
                   <div className='mt-3 overflow-hidden'>
