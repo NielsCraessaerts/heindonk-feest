@@ -26,10 +26,21 @@ export default function Footer() {
   return (
     <footer
       className={`relative border-t border-white/20 text-white ${
-        isHomepage ? 'bg-[#1f4d93]' : 'bg-white/5 backdrop-blur-[2px]'
+        isHomepage
+          ? 'bg-[#2E5DAA]'
+          : 'bg-white/5 backdrop-blur-[2px]'
       }`}
     >
-      <div className='pointer-events-none absolute inset-0 opacity-[0.18] [background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.16)_0px,rgba(255,255,255,0.16)_42px,rgba(255,255,255,0)_42px,rgba(255,255,255,0)_96px)]' />
+      {isHomepage ? (
+        <>
+          <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(255,255,255,0.12),rgba(255,255,255,0)_55%)]' />
+          <div className='pointer-events-none absolute inset-0 opacity-[0.28] [background-image:repeating-linear-gradient(135deg,rgba(255,255,255,0.12)_0px,rgba(255,255,255,0.12)_42px,rgba(255,255,255,0)_42px,rgba(255,255,255,0)_96px)]' />
+          <div className="[background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22120%22 height=%22120%22 filter=%22url(%23n)%22 opacity=%220.55%22/%3E%3C/svg%3E')] pointer-events-none absolute inset-0 opacity-[0.12]" />
+        </>
+      ) : null}
+      {!isHomepage ? (
+        <div className='pointer-events-none absolute inset-0 opacity-[0.18]' />
+      ) : null}
       <div className='relative z-10 mx-auto w-full max-w-6xl px-6 py-8 sm:py-10'>
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           <div className='space-y-3'>
