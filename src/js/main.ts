@@ -2,12 +2,12 @@ export function initSiteScripts() {
   const summaryBlocks = document.querySelectorAll<HTMLElement>(".summary-anim");
 
   if (!summaryBlocks.length) {
-    return;
+    return () => {};
   }
 
   if (!("IntersectionObserver" in window)) {
     summaryBlocks.forEach((block) => block.classList.add("is-inview"));
-    return;
+    return () => {};
   }
 
   const observer = new IntersectionObserver(
@@ -26,4 +26,8 @@ export function initSiteScripts() {
   );
 
   summaryBlocks.forEach((block) => observer.observe(block));
+
+  return () => {
+    observer.disconnect();
+  };
 }
