@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ZondagBrunch() {
   const badges = ['Familie', 'Gezellig'];
 
@@ -16,10 +18,11 @@ export default function ZondagBrunch() {
             <div className='grid gap-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch'>
               <div className='rounded-[20px] bg-white/10 px-6 py-7'>
                 <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/80'>
-                  Gezellig ontbijten op zondag
+                  Gezellig brunchen op zondag
                 </p>
                 <p className='mt-4 text-[12px] font-semibold uppercase tracking-[0.24em] text-white/80'>
-                  Doorlopend voor en tijdens het programma
+                  De huistraiteur van VK Heindonk serveert onze brunch van 10h30
+                  tot 13h30
                 </p>
                 <div className='mt-4 flex flex-wrap gap-2'>
                   {badges.map((item) => (
@@ -44,6 +47,49 @@ export default function ZondagBrunch() {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            <div className='mt-6 grid gap-4 lg:grid-cols-2'>
+              <div className='border-white/12 rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/95'>
+                  Tickets
+                </p>
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  WeTickets + QR code
+                </p>
+                <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
+                  <Image
+                    src='/images/qr-code.png'
+                    alt='QR code tickets'
+                    width={80}
+                    height={80}
+                    className='h-20 w-20 object-contain'
+                  />
+                </div>
+                <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
+                  Scan voor tickets
+                </p>
+              </div>
+
+              <div className='border-white/12 rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/80'>
+                  VIP arrangement
+                </p>
+                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
+                  Via sponsoring
+                </p>
+
+                <a
+                  href='/sponsorpakketten'
+                  className='mt-5 inline-flex h-12 items-center justify-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
+                >
+                  Bekijk VIP mogelijkheden
+                </a>
+
+                <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
+                  Support the cause • Support the club
+                </p>
               </div>
             </div>
           </div>

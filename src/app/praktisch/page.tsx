@@ -31,6 +31,24 @@ const ORGANISATIE_LINKS = {
   voetbal: 'https://www.vkheindonk.com/',
 };
 
+const FAQ = [
+  {
+    question: 'Moet ik tickets op voorhand kopen?',
+    answer:
+      'Voor betalende onderdelen raden we aan om tickets op voorhand te kopen via WeTicket.',
+  },
+  {
+    question: 'Is er parking voorzien?',
+    answer:
+      'Ja, er is parking op een aanpalende weide en indien nodig een overloopparking op wandelafstand.',
+  },
+  {
+    question: 'Wanneer is mijn inschrijving definitief?',
+    answer:
+      'Inschrijvingen zijn pas definitief na betaling en bevestiging door de organisatie.',
+  },
+];
+
 export default function PraktischPage() {
   return (
     <main className='relative min-h-screen text-white'>
@@ -166,6 +184,28 @@ export default function PraktischPage() {
                 VK Heindonk
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className='block-anim mt-6 rounded-[28px] bg-white/10 p-6 sm:p-8'>
+          <h2 className='text-center text-2xl font-extrabold uppercase tracking-[0.14em] sm:text-3xl'>
+            Veel gestelde vragen
+          </h2>
+
+          <div className='mt-6 grid gap-3 md:grid-cols-3'>
+            {FAQ.map((item) => (
+              <div
+                key={item.question}
+                className='rounded-[20px] border border-white/20 bg-white/10 px-5 py-5'
+              >
+                <p className='text-[11px] font-extrabold uppercase tracking-[0.16em] text-white'>
+                  {item.question}
+                </p>
+                <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/85'>
+                  {item.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </div>

@@ -1,25 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { sponsors } from '@/data/sponsors';
-import SponsorsCategorySection from '@/components/custom/sponsors-page/sponsors-category-section';
-import {
-  categorieVolgorde,
-  sortSponsorsByGrootteThenName,
-} from '@/components/custom/sponsors-page/sponsor-config';
 
 export default function SponsorsPage() {
-  const sponsorsPerCategorie = categorieVolgorde
-    .map((categorie) => {
-      const items = sponsors
-        .filter((s) => s.categorie === categorie)
-        .slice()
-        .sort(sortSponsorsByGrootteThenName);
-
-      return { categorie, items };
-    })
-    .filter((groep) => groep.items.length > 0);
-
   return (
     <main className='relative min-h-screen text-white'>
       <div className='pointer-events-none fixed inset-0 -z-20 bg-[#2E5DAA]' />
@@ -30,8 +13,14 @@ export default function SponsorsPage() {
       <div className='relative z-10 mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
         <section className='rounded-[28px] bg-white/10 px-6 py-8 text-center sm:px-10'>
           <h1 className='text-xl font-extrabold uppercase leading-tight tracking-[0.08em] sm:text-4xl sm:tracking-[0.16em]'>
-            Wij danken onze sponsors
+            Onze sponsors
           </h1>
+          <p className='mx-auto mt-5 max-w-3xl text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-[12px] sm:tracking-[0.2em]'>
+            We zijn momenteel nog sponsors aan het verzamelen.
+          </p>
+          <p className='mx-auto mt-3 max-w-3xl text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85 sm:text-[12px] sm:tracking-[0.2em]'>
+            Interesse om sponsor te worden van Heindonk Feest?
+          </p>
 
           <Link
             href='/sponsorpakketten'
@@ -39,16 +28,6 @@ export default function SponsorsPage() {
           >
             Word sponsor
           </Link>
-        </section>
-
-        <section className='mt-6 space-y-6'>
-          {sponsorsPerCategorie.map((groep) => (
-            <SponsorsCategorySection
-              key={groep.categorie}
-              categorie={groep.categorie}
-              items={groep.items}
-            />
-          ))}
         </section>
       </div>
     </main>

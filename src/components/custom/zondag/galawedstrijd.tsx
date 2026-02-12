@@ -1,11 +1,38 @@
+﻿'use client';
+
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function ZondagGalawedstrijd() {
   const charities = [
-    'Het Rode Kruis',
-    'Kom op tegen Kanker',
-    'Boven de Wolken',
+    { name: 'Het Rode Kruis', website: 'rodekruis.be' },
+    { name: 'Kom op tegen Kanker', website: 'komoptegenkanker.be' },
+    { name: 'Boven de Wolken', website: 'bovendewolken.be' },
   ];
+  const truckPhotos = ['/images/truck1.jpeg', '/images/truck2.jpeg'];
+  const facts = [
+    'De kleuren van VK Heindonk komen van de eerste sponsor Moortgat. Oranje en blauw zijn dus al 70 jaar oud.',
+    'Moortgat liet de cafetaria van VK Heindonk bouwen.',
+    'De retro-truitjes waarmee de ploegen spelen zijn kopieen van de eerste uitrusting van VK Heindonk.',
+  ];
+
+  const [photoIndex, setPhotoIndex] = useState(0);
+  const [factIndex, setFactIndex] = useState(0);
+
+  useEffect(() => {
+    const photoTimer = window.setInterval(() => {
+      setPhotoIndex((prev) => (prev + 1) % truckPhotos.length);
+    }, 4500);
+
+    const factTimer = window.setInterval(() => {
+      setFactIndex((prev) => (prev + 1) % facts.length);
+    }, 5000);
+
+    return () => {
+      window.clearInterval(photoTimer);
+      window.clearInterval(factTimer);
+    };
+  }, [truckPhotos.length, facts.length]);
 
   return (
     <section className='relative text-white'>
@@ -66,7 +93,7 @@ export default function ZondagGalawedstrijd() {
               {/* fanfare */}
               <div className='hover:bg-white/12 group rounded-[22px] border border-white/10 bg-white/10 px-6 py-6 transition'>
                 <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/70'>
-                  Opgeluisterd
+                  Opgeluisterd door
                 </p>
                 <p className='mt-3 text-[13px] font-extrabold uppercase tracking-[0.22em] text-white'>
                   KF Iever Maakt Vooruitgang
@@ -74,29 +101,52 @@ export default function ZondagGalawedstrijd() {
                 <p className='mt-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75'>
                   Muzikale omkadering voor een echte erewedstrijd
                 </p>
+
+                <div className='mt-5 h-px w-full bg-white/20' />
+
+                <p className='mt-5 text-[10px] font-semibold uppercase tracking-[0.36em] text-white/70'>
+                  Foodtruck
+                </p>
+                <a
+                  href='https://vroempatat.be'
+                  target='_blank'
+                  rel='noreferrer'
+                  aria-label='Bezoek de website van Vroempatat'
+                  className='mt-3 inline-flex cursor-pointer rounded-[16px] border border-white/45 bg-white/15 px-4 py-3 shadow-[0_10px_24px_-16px_rgba(0,0,0,0.8)] transition hover:-translate-y-0.5 hover:bg-white/25 hover:shadow-[0_16px_30px_-18px_rgba(0,0,0,0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70'
+                >
+                  <Image
+                    src='/images/logos/vroempatat.png'
+                    alt='Vroempatat logo'
+                    width={180}
+                    height={64}
+                    className='h-12 w-auto object-contain'
+                  />
+                </a>
               </div>
 
               {/* auction */}
-              <div className='relative overflow-hidden rounded-[22px] border border-white/10 bg-white/10 px-6 py-6'>
-                <div className='pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/10 opacity-80 blur-3xl' />
-                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/70'>
+              <div className='group relative overflow-hidden rounded-[22px] border border-[#F39B3A] bg-[#F39B3A] px-6 py-6 shadow-[0_30px_90px_-60px_rgba(243,155,58,0.95)] transition hover:-translate-y-0.5 hover:shadow-[0_40px_100px_-55px_rgba(243,155,58,1)]'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/90'>
                   Lucky veiling
                 </p>
                 <p className='mt-3 text-[13px] font-extrabold uppercase tracking-[0.22em] text-white'>
                   Retro-truitjes Duvel Moortgat
                 </p>
 
-                <p className='mt-5 text-[10px] font-semibold uppercase tracking-[0.36em] text-white/70'>
+                <p className='mt-5 text-[10px] font-semibold uppercase tracking-[0.36em] text-white/85'>
                   Voor het goede doel
                 </p>
                 <div className='mt-3 flex flex-wrap gap-2'>
                   {charities.map((item) => (
-                    <span
-                      key={item}
-                      className='rounded-full bg-white/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.28em] text-white'
+                    <a
+                      key={item.name}
+                      href={`https://${item.website}`}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='rounded-full border border-white/35 bg-black/20 px-3 py-1 text-[10px] font-extrabold uppercase tracking-[0.24em] text-white transition hover:bg-black/30'
                     >
-                      {item}
-                    </span>
+                      {item.name}
+                    </a>
                   ))}
                 </div>
               </div>
@@ -107,7 +157,7 @@ export default function ZondagGalawedstrijd() {
                   Moment
                 </p>
                 <p className='mt-3 text-[13px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  Eenmalige clash — volle ambiance
+                  Eenmalige clash & volle ambiance
                 </p>
                 <div className='mt-4 grid gap-2'>
                   <div className='rounded-[16px] bg-white/10 px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white/90'>
@@ -120,55 +170,78 @@ export default function ZondagGalawedstrijd() {
               </div>
             </div>
 
-            {/* CTA row */}
-            <div className='mt-6 grid gap-4 lg:grid-cols-2'>
-              <div className='border-white/12 rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/95'>
-                  Tickets
-                </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  WeTickets + QR code
-                </p>
-                <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
-                  <Image
-                    src='/images/qr-code.png'
-                    alt='QR code tickets'
-                    width={80}
-                    height={80}
-                    className='h-20 w-20 object-contain'
-                  />
+            <div className='mt-6 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]'>
+              <div className='rounded-[22px] border border-white/10 bg-white/10 p-4 sm:p-5'>
+                <div className='relative mt-4 overflow-hidden rounded-[16px]'>
+                  <div
+                    className='flex transition-transform duration-700 ease-out'
+                    style={{ transform: `translateX(-${photoIndex * 100}%)` }}
+                  >
+                    {truckPhotos.map((photo) => (
+                      <div
+                        key={photo}
+                        className='relative h-[240px] min-w-full sm:h-[300px]'
+                      >
+                        <Image
+                          src={photo}
+                          alt='Vroempatat foodtruck'
+                          fill
+                          className='object-cover'
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className='mt-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-white/90'>
-                  Scan voor tickets
-                </p>
+
+                <div className='mt-3 flex justify-center gap-2'>
+                  {truckPhotos.map((photo, index) => (
+                    <button
+                      key={photo}
+                      type='button'
+                      aria-label={`Toon foto ${index + 1}`}
+                      onClick={() => setPhotoIndex(index)}
+                      className={`h-2.5 rounded-full transition ${
+                        photoIndex === index
+                          ? 'w-8 bg-[#F39B3A]'
+                          : 'w-2.5 bg-white/35 hover:bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
 
-              <div className='border-white/12 rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
-                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/80'>
-                  VIP arrangement
-                </p>
-                <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
-                  Via sponsoring
+              {/* wist je dat */}
+              <div className='rounded-[22px] border border-white/10 bg-white/10 px-6 py-6'>
+                <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/70'>
+                  Wist je dat ?
                 </p>
 
-                <a
-                  href='/sponsorpakketten'
-                  className='mt-5 inline-flex h-12 items-center justify-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
-                >
-                  Bekijk VIP mogelijkheden
-                </a>
-
-                <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
-                  Support the cause • Support the club
-                </p>
+                <div className='relative mt-4 min-h-[170px] overflow-hidden px-5 py-5'>
+                  {facts.map((fact, index) => (
+                    <div
+                      key={fact}
+                      className={[
+                        'absolute inset-0 flex items-start',
+                        'transition-opacity duration-1000',
+                        index === factIndex ? 'opacity-100' : 'opacity-0',
+                      ].join(' ')}
+                      aria-hidden={index !== factIndex}
+                    >
+                      <p
+                        className={[
+                          'text-[12px] font-semibold uppercase tracking-[0.16em] text-white/95',
+                          'transition-transform duration-1000',
+                          index === factIndex
+                            ? 'translate-y-0'
+                            : 'translate-y-2',
+                        ].join(' ')}
+                      >
+                        {fact}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            {/* footer note */}
-            <div className='mt-8 text-center'>
-              <p className='text-[11px] font-semibold uppercase tracking-[0.34em] text-white/70'>
-                Sport, spel en muziek • Foodtrucks
-              </p>
             </div>
           </div>
         </div>
