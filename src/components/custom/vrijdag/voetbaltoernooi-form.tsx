@@ -234,6 +234,10 @@ export default function VoetbaltoernooiForm() {
                     Inschrijving is pas definitief na betaling en confirmatie
                     van de organisatie.
                   </p>
+                  <p className='mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Na inschrijving van uw ploeg gelieve te betalen via
+                    overschrijving.
+                  </p>
                 </div>
 
                 <div className='flex h-full flex-col rounded-[14px] bg-[#F39B3A] px-4 py-4 text-center'>

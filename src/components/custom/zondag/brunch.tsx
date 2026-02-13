@@ -37,15 +37,14 @@ export default function ZondagBrunch() {
               </div>
 
               <div className='rounded-[20px] bg-white/10 p-3 sm:p-4'>
-                <div className='flex h-full min-h-[260px] items-center justify-center rounded-[14px] border border-dashed border-white/45 bg-white/5 p-6 text-center'>
-                  <div>
-                    <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/75'>
-                      Foto
-                    </p>
-                    <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white/90'>
-                      Plaats hier een brunch-afbeelding
-                    </p>
-                  </div>
+                <div className='relative h-full min-h-[260px] overflow-hidden rounded-[14px]'>
+                  <Image
+                    src='/images/brunch.jpg'
+                    alt='Brunch op zondag'
+                    fill
+                    className='object-cover'
+                    sizes='(max-width: 1024px) 100vw, 45vw'
+                  />
                 </div>
               </div>
             </div>
@@ -58,6 +57,14 @@ export default function ZondagBrunch() {
                 <p className='mt-3 text-[12px] font-extrabold uppercase tracking-[0.22em] text-white'>
                   WeTickets + QR code
                 </p>
+                <div className='mt-4 rounded-[16px] border border-white/30 bg-white/15 px-4 py-3'>
+                  <p className='text-[9px] font-semibold uppercase tracking-[0.3em] text-white/80'>
+                    Prijs
+                  </p>
+                  <p className='mt-2 text-[13px] font-extrabold uppercase tracking-[0.18em] text-white'>
+                    &euro;60
+                  </p>
+                </div>
                 <div className='mx-auto mt-4 h-20 w-20 overflow-hidden rounded-[18px] bg-white/20'>
                   <Image
                     src='/images/qr-code.png'
@@ -72,7 +79,7 @@ export default function ZondagBrunch() {
                 </p>
               </div>
 
-              <div className='border-white/12 rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
+              <div className='border-white/12 flex h-full flex-col rounded-[24px] border bg-white/10 px-6 py-6 text-center'>
                 <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/80'>
                   VIP arrangement
                 </p>
@@ -82,12 +89,12 @@ export default function ZondagBrunch() {
 
                 <a
                   href='/sponsorpakketten'
-                  className='mt-5 inline-flex h-12 items-center justify-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
+                  className='mt-5 inline-flex h-12 items-center justify-center self-center rounded-full bg-white/15 px-6 text-[11px] font-extrabold uppercase tracking-[0.32em] text-white transition hover:bg-white/25 active:scale-[0.99]'
                 >
                   Bekijk VIP mogelijkheden
                 </a>
 
-                <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
+                <p className='mt-auto pt-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70'>
                   Support the cause • Support the club
                 </p>
               </div>
@@ -98,3 +105,5 @@ export default function ZondagBrunch() {
     </section>
   );
 }
+
+
