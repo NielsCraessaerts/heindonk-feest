@@ -267,7 +267,7 @@ export default function VoetbaltoernooiForm() {
                       BE70 1036 0326 7825
                     </p>
                     <p className='mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/90'>
-                      Op naam van KF Iever Maakt Vooruitgang Heindonk vzw
+                      Op naam van Heindonk Feest
                     </p>
                   </div>
                 </div>
