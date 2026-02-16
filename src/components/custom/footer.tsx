@@ -51,7 +51,7 @@ export default function Footer() {
               Drie dagen sport, spel, muziek en sfeer.
             </p>
             <p className='text-[11px] font-semibold uppercase tracking-[0.14em] text-white/80'>
-              Terrein VK Heindonk, Kleine Bergen 1, 2830 Heindonk
+              Terrein VK Heindonk, Kleine Bergen 4a, 2830 Heindonk
             </p>
           </div>
 
