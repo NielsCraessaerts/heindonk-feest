@@ -83,6 +83,9 @@ export default function ZondagGalawedstrijd() {
                 <span className='rounded-full bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.32em] text-white/90'>
                   Feesttent & terrein VK Heindonk
                 </span>
+                <span className='rounded-full bg-white/10 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.32em] text-white/90'>
+                  14:00
+                </span>
               </div>
             </div>
           </div>

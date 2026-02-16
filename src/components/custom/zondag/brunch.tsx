@@ -21,8 +21,8 @@ export default function ZondagBrunch() {
                   Gezellig brunchen op zondag
                 </p>
                 <p className='mt-4 text-[12px] font-semibold uppercase tracking-[0.24em] text-white/80'>
-                  De huistraiteur van VK Heindonk serveert onze brunch van 10h30
-                  tot 13h30
+                  De huistraiteur van VK Heindonk serveert onze brunch van 10:30
+                  tot 13:30
                 </p>
                 <div className='mt-4 flex flex-wrap gap-2'>
                   {badges.map((item) => (
@@ -105,5 +105,3 @@ export default function ZondagBrunch() {
     </section>
   );
 }
-
-
