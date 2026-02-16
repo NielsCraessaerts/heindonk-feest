@@ -80,7 +80,7 @@ export default function VoetbaltoernooiForm() {
             </h2>
             <div className='mx-auto mt-4 h-px w-28 bg-white/40' />
             <div className='mt-5 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-[10px] font-extrabold uppercase tracking-[0.34em] text-white'>
-              Open inschrijvingen | aanmelden vanaf 09:00
+              Open inschrijvingen
             </div>
           </div>
 
@@ -89,6 +89,9 @@ export default function VoetbaltoernooiForm() {
               <div className='rounded-[18px] bg-white/15 px-5 py-5'>
                 <p className='text-center text-[11px] font-semibold uppercase tracking-[0.34em] text-white/90'>
                   Inschrijving
+                </p>
+                <p className='mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85'>
+                  Aanmelden tussen 9:00 en 9:40 | start tornooi 10:00
                 </p>
 
                 <form

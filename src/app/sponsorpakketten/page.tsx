@@ -110,7 +110,7 @@ export default function SponsorpakkettenPage() {
             Kies het pakket dat bij uw bedrijf past
           </p>
           <a
-            href='/files/Heindonk%20Feest!%20Sponsordossier%20v1.00.pdf'
+            href='/files/Heindonk%20Feest!%20Sponsordossier.pdf'
             className='mt-6 inline-flex rounded-full bg-[#F39B3A] px-7 py-3 text-[11px] font-extrabold uppercase tracking-[0.22em] text-white shadow-[0_16px_40px_-20px_rgba(243,155,58,0.9)] transition hover:brightness-110'
           >
             Download sponsordossier

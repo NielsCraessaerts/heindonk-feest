@@ -92,6 +92,9 @@ export default function WkKubbSection() {
                 <p className='text-center text-[11px] font-semibold uppercase tracking-[0.34em] text-white/90'>
                   Inschrijving
                 </p>
+                <p className='mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85'>
+                  Aanmelden tussen 11:00 en 11:30 | start tornooi 12:15
+                </p>
 
                 <form className='mt-4 grid gap-4' onSubmit={onSubmit}>
                   <label className='block'>
