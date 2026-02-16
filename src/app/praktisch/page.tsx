@@ -2,7 +2,7 @@ import { Bike, Car, Footprints } from 'lucide-react';
 import Image from 'next/image';
 
 const PRAKTISCH = {
-  address: 'Terreinen VK Heindonk, Kleine Bergen 1, 2830 Heindonk',
+  address: 'Terreinen VK Heindonk, Kleine Bergen 4a, 2830 Heindonk',
   email: 'heindonk_feest@hotmail.com',
   mapsQuery: 'Terreinen VK Heindonk, Kleine Bergen 1, 2830 Heindonk',
   accessibility: [
