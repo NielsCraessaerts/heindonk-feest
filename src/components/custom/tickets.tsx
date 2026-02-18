@@ -17,12 +17,12 @@ const defaultFoodtrucks: readonly Foodtruck[] = [
   {
     name: 'Vroempatat',
     logoSrc: '/images/logos/vroempatat.png',
-    href: 'https://www.vroempatat.com',
+    href: 'https://www.vroempatat.be/',
   },
   {
     name: 'Elga Events',
     logoSrc: '/images/logos/Elga.png',
-    href: 'https://www.instagram.com/elgaevents',
+    href: 'https://elgaevents.be/',
   },
 ];
 
