@@ -2,7 +2,7 @@ import type { Sponsor, SponsorCategorie } from '@/data/sponsors';
 
 export const categorieVolgorde: readonly SponsorCategorie[] = [
   'Hoofdsponsor Gold',
-  'Hoofdsponsor',
+  'Hoofdsponsor Zilver',
   'Sponsor VIP Weekend',
   'Sponsor VIP Party Friday & Saturday',
   'Sponsor VIP Friday',
@@ -15,7 +15,8 @@ type PakketGrootte = keyof typeof sizeRank;
 
 const pakketGroottePerCategorie: Record<SponsorCategorie, PakketGrootte> = {
   'Hoofdsponsor Gold': 'xl',
-  Hoofdsponsor: 'xl',
+  'Hoofdsponsor Zilver': 'xl',
+  'Organisatie': 'xl',
   'Sponsor VIP Weekend': 'lg',
   'Sponsor VIP Party Friday & Saturday': 'md',
   'Sponsor VIP Friday': 'sm',
@@ -68,5 +69,7 @@ export function isLowTierCategorie(categorie: SponsorCategorie) {
 }
 
 export function isTopCategorie(categorie: SponsorCategorie) {
-  return categorie === 'Hoofdsponsor' || categorie === 'Hoofdsponsor Gold';
+  return (
+    categorie === 'Hoofdsponsor Gold' || categorie === 'Hoofdsponsor Zilver'
+  );
 }
