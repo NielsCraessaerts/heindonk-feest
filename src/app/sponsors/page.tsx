@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import SponsorCollection from '@/components/custom/sponsorcollection';
 
 export default function SponsorsPage() {
   return (
@@ -15,9 +16,6 @@ export default function SponsorsPage() {
           <h1 className='text-xl font-extrabold uppercase leading-tight tracking-[0.08em] sm:text-4xl sm:tracking-[0.16em]'>
             Onze sponsors
           </h1>
-          <p className='mx-auto mt-5 max-w-3xl text-[11px] font-semibold uppercase tracking-[0.16em] text-white/90 sm:text-[12px] sm:tracking-[0.2em]'>
-            We zijn momenteel nog sponsors aan het verzamelen.
-          </p>
           <p className='mx-auto mt-3 max-w-3xl text-[11px] font-semibold uppercase tracking-[0.16em] text-white/85 sm:text-[12px] sm:tracking-[0.2em]'>
             Interesse om sponsor te worden van Heindonk Feest?
           </p>
@@ -29,6 +27,10 @@ export default function SponsorsPage() {
             Word sponsor
           </Link>
         </section>
+
+        <div className='mt-10 sm:mt-14'>
+          <SponsorCollection />
+        </div>
       </div>
     </main>
   );
