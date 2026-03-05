@@ -43,7 +43,7 @@ export default function ZondagGalawedstrijd() {
               Main Event
             </p>
 
-            <h1 className='mt-4 text-3xl font-extrabold uppercase leading-tight tracking-[0.10em] sm:text-4xl md:text-5xl lg:text-6xl lg:tracking-[0.16em]'>
+            <h1 className='mt-4 text-2xl font-extrabold uppercase leading-tight tracking-[0.10em] sm:text-4xl md:text-5xl lg:text-6xl lg:tracking-[0.16em]'>
               Galawedstrijd
             </h1>
 

@@ -57,7 +57,7 @@ export async function POST(req: Request) {
 
     const tournamentFee = "EUR 350";
     const paymentIban =
-      process.env.TOURNAMENT_PAYMENT_IBAN || "BE00 0000 0000 0000";
+      process.env.TOURNAMENT_PAYMENT_IBAN || "BE70 1036 0326 7825";
     const paymentName = process.env.TOURNAMENT_PAYMENT_NAME || "VK Heindonk";
 
     const subject = `VKH Tornooi inschrijving - ${data.teamnaam} (${data.competitie})`;
