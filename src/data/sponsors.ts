@@ -29,7 +29,7 @@ export const sponsors: readonly Sponsor[] = [
   {
     name: 'Jupiler',
     logoSrc: '/images/logos/sponsors/jupiler.png',
-    categorie: 'Hoofdsponsor Gold',
+    categorie: 'Hoofdsponsor Zilver',
   },
   {
     name: 'J2B Solutions',
@@ -42,15 +42,38 @@ export const sponsors: readonly Sponsor[] = [
     categorie: 'Hoofdsponsor Gold',
   },
   {
-    name: 'Dierenarstpraktijk De Bron',
-    logoSrc: '/images/logos/sponsors/DierenartsenpraktijkDeBron.jpeg',
-    categorie: 'Sponsor VIP Party Friday & Saturday',
+    name: 'CK & Co',
+    logoSrc: '/images/logos/sponsors/Logo_CK_en_Co.png',
+    categorie: 'Hoofdsponsor Zilver',
   },
   {
-    name: 'Apotheek De Jonghe',
-    logoSrc: '/images/logos/sponsors/Logo_ApotheekDeJonghe_Landscape.jpg',
-    categorie: 'Sponsor VIP Party Friday & Saturday',
+    name: 'Wellens & Co',
+    logoSrc: '/images/logos/sponsors/Logo_wellens.png',
+    categorie: 'Sponsor VIP Weekend',
   },
-
-
+  {
+    name: 'Vanbuild',
+    logoSrc: '/images/logos/sponsors/Logo_Vanbuild.png',
+    categorie: 'Sponsor VIP Weekend',
+  },
+  {
+    name: 'Vroempatat',
+    logoSrc: '/images/logos/vroempatat.png',
+    categorie: 'Sponsor VIP Friday',
+  },
+  {
+    name: 'Okapi',
+    logoSrc: '/images/logos/sponsors/Logo_Okapi.png',
+    categorie: 'Sponsor VIP Friday',
+  },
+  {
+    name: 'Verschaeren & Mertens',
+    logoSrc: '/images/logos/sponsors/Logo_V&M.png',
+    categorie: 'Sponsor VIP Saturday',
+  },
+  {
+    name: 'Bluethink',
+    logoSrc: '/images/logos/sponsors/Logo_Bluethink.png',
+    categorie: 'Sponsor VIP Saturday',
+  },
 ];

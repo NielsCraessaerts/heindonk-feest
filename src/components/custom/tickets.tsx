@@ -6,32 +6,45 @@ type Foodtruck = {
   href?: string;
 };
 
+type FoodtruckId = 1 | 2;
+type FoodtruckSelectionId = FoodtruckId | 3;
+
 type TicketsInfoBlockProps = {
   className?: string;
-  foodtrucks?: readonly Foodtruck[];
+  foodtruckId: FoodtruckSelectionId;
   ticketPrice?: string;
   ticketPriceLabel?: string;
 };
 
-const defaultFoodtrucks: readonly Foodtruck[] = [
-  {
+const foodtruckById: Record<FoodtruckId, Foodtruck> = {
+  1: {
     name: 'Vroempatat',
     logoSrc: '/images/logos/vroempatat.png',
     href: 'https://www.vroempatat.be/',
   },
-  {
+  2: {
     name: 'Elga Events',
     logoSrc: '/images/logos/Elga.png',
     href: 'https://elgaevents.be/',
   },
-];
+};
+
+function getFoodtrucksFromId(selectionId: FoodtruckSelectionId): readonly Foodtruck[] {
+  if (selectionId === 3) {
+    return [foodtruckById[1], foodtruckById[2]];
+  }
+
+  return [foodtruckById[selectionId]];
+}
 
 export default function TicketsInfoBlock({
   className = 'mt-6',
-  foodtrucks = defaultFoodtrucks,
+  foodtruckId,
   ticketPrice,
   ticketPriceLabel = 'Prijs',
 }: TicketsInfoBlockProps) {
+  const foodtrucks = getFoodtrucksFromId(foodtruckId);
+
   return (
     <div className={`${className} grid gap-4 lg:grid-cols-2`}>
       <div className='border-white/12 flex h-full flex-col rounded-[24px] border bg-[#F39B3A] px-6 py-6 text-center text-white shadow-[0_28px_90px_-70px_rgba(0,0,0,0.9)]'>

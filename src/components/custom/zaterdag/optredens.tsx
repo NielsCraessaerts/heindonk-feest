@@ -166,7 +166,7 @@ export default function LiveOptredensSection() {
               </div>
             </div>
 
-            <TicketsInfoBlock ticketPrice='EUR 25' />
+            <TicketsInfoBlock foodtruckId={2} ticketPrice='EUR 25' />
           </div>
         </div>
       </div>

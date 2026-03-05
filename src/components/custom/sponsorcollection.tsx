@@ -4,53 +4,28 @@ import Image from 'next/image';
 import type { Sponsor, SponsorCategorie } from '@/data/sponsors';
 import { sponsors } from '@/data/sponsors';
 
-type CategoryConfig = {
-  title: SponsorCategorie;
-  columns: 2 | 3 | 4 | 6;
-};
-
-type LogoSize = 'gold' | 'zilver' | 'vip' | 'standaard';
-
-const categoryOrder: readonly CategoryConfig[] = [
-  { title: 'Hoofdsponsor Gold', columns: 2 },
-  { title: 'Hoofdsponsor Zilver', columns: 3 },
-  { title: 'Sponsor VIP Weekend', columns: 4 },
-  { title: 'Sponsor VIP Party Friday & Saturday', columns: 4 },
-  { title: 'Sponsor VIP Friday', columns: 6 },
-  { title: 'Sponsor VIP Saturday', columns: 6 },
-  { title: 'Sponsor VIP Sunday', columns: 6 },
+type LogoSize = 'gold' | 'zilver' | 'vip';
+const vipCategorieen: readonly SponsorCategorie[] = [
+  'Sponsor VIP Weekend',
+  'Sponsor VIP Party Friday & Saturday',
+  'Sponsor VIP Friday',
+  'Sponsor VIP Saturday',
+  'Sponsor VIP Sunday',
 ];
-
-const gridClassByColumns: Record<CategoryConfig['columns'], string> = {
-  2: 'grid-cols-1 sm:grid-cols-2',
-  3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
-  4: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4',
-  6: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6',
-};
-
-const logoSizeByColumns: Record<CategoryConfig['columns'], LogoSize> = {
-  2: 'gold',
-  3: 'zilver',
-  4: 'vip',
-  6: 'standaard',
-};
 
 const cardClassBySize: Record<LogoSize, string> = {
   gold:
-    'flex min-h-72 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-10 transition hover:bg-white/20',
+    'flex min-h-72 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-5 transition hover:bg-white/20 sm:p-6',
   zilver:
-    'flex min-h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-4 transition hover:bg-white/20',
+    'flex min-h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-3 transition hover:bg-white/20 sm:p-4',
   vip:
-    'flex min-h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-4 transition hover:bg-white/20',
-  standaard:
-    'flex min-h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-4 transition hover:bg-white/20',
+    'flex min-h-36 items-center justify-center rounded-2xl border border-white/20 bg-white/10 p-3 transition hover:bg-white/20 sm:p-4',
 };
 
 const imageClassBySize: Record<LogoSize, string> = {
-  gold: 'h-44 w-full max-w-[760px] object-contain sm:h-48',
-  zilver: 'h-20 w-full max-w-[260px] object-contain sm:h-24',
-  vip: 'h-20 w-full max-w-[260px] object-contain sm:h-24',
-  standaard: 'h-20 w-full max-w-[260px] object-contain sm:h-24',
+  gold: 'h-auto max-h-[300px] w-full object-contain',
+  zilver: 'h-auto max-h-[190px] w-full object-contain',
+  vip: 'h-auto max-h-[180px] w-full object-contain',
 };
 
 function SponsorCard({
@@ -97,32 +72,62 @@ function SponsorCard({
 }
 
 export default function SponsorCollection() {
+  const goldSponsors = sponsors.filter(
+    (sponsor) => sponsor.categorie === 'Hoofdsponsor Gold'
+  );
+  const zilverSponsors = sponsors.filter(
+    (sponsor) => sponsor.categorie === 'Hoofdsponsor Zilver'
+  );
+  const vipSponsors = sponsors.filter((sponsor) =>
+    vipCategorieen.includes(sponsor.categorie)
+  );
+
   return (
     <section className='space-y-10'>
-      {categoryOrder.map((category, categoryIndex) => {
-        const sponsorsInCategory = sponsors.filter(
-          (sponsor) => sponsor.categorie === category.title
-        );
-
-        if (sponsorsInCategory.length === 0) {
-          return null;
-        }
-
-        return (
-          <div key={category.title}>
-            <div className={`grid gap-4 ${gridClassByColumns[category.columns]}`}>
-              {sponsorsInCategory.map((sponsor, sponsorIndex) => (
-                <SponsorCard
-                  key={sponsor.name}
-                  sponsor={sponsor}
-                  priority={categoryIndex < 2 && sponsorIndex < 2}
-                  size={logoSizeByColumns[category.columns]}
-                />
-              ))}
-            </div>
+      {goldSponsors.length > 0 ? (
+        <div>
+          <div className='grid grid-cols-1 gap-4'>
+            {goldSponsors.map((sponsor, index) => (
+              <SponsorCard
+                key={sponsor.name}
+                sponsor={sponsor}
+                priority={index < 2}
+                size='gold'
+              />
+            ))}
           </div>
-        );
-      })}
+        </div>
+      ) : null}
+
+      {zilverSponsors.length > 0 ? (
+        <div>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+            {zilverSponsors.map((sponsor, index) => (
+              <SponsorCard
+                key={sponsor.name}
+                sponsor={sponsor}
+                priority={index < 2}
+                size='zilver'
+              />
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {vipSponsors.length > 0 ? (
+        <div>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+            {vipSponsors.map((sponsor) => (
+              <SponsorCard
+                key={sponsor.name}
+                sponsor={sponsor}
+                priority={false}
+                size='vip'
+              />
+            ))}
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }

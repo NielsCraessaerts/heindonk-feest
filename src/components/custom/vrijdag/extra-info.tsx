@@ -95,7 +95,7 @@ export default function ExtraInfoVrijdag() {
                 ))}
               </div>
 
-              <TicketsInfoBlock ticketPrice='EUR 25' />
+              <TicketsInfoBlock foodtruckId={3} ticketPrice='EUR 25' />
             </div>
           </div>
         </div>
