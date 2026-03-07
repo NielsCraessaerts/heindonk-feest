@@ -8,7 +8,7 @@ import { sponsors } from '@/data/sponsors';
 export default function SponsorsStrip() {
   const pathname = usePathname();
   const showHomepageBackground = pathname === '/';
-  const loopCopies = 4;
+  const loopCopies = 1;
   const loopedSponsors = Array.from({ length: loopCopies }).flatMap(
     () => sponsors
   );
