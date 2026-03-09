@@ -76,4 +76,9 @@ export const sponsors: readonly Sponsor[] = [
     logoSrc: '/images/logos/sponsors/Logo_Bluethink.png',
     categorie: 'Sponsor VIP Saturday',
   },
+  {
+    name: 'Tuinwerken Geerts',
+    logoSrc: '/images/logos/sponsors/Logo_Tuinwerken_geerts.svg',
+    categorie: 'Sponsor VIP Friday',
+  }
 ];
