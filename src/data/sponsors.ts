@@ -43,7 +43,7 @@ export const sponsors: readonly Sponsor[] = [
   },
   {
     name: 'CK & Co',
-    logoSrc: '/images/logos/sponsors/Logo_CK_en_Co.png',
+    logoSrc: '/images/logos/sponsors/CK_en_CO_v02.jpg',
     categorie: 'Hoofdsponsor Zilver',
   },
   {
