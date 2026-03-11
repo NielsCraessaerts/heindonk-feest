@@ -78,7 +78,7 @@ export const sponsors: readonly Sponsor[] = [
   },
   {
     name: 'Tuinwerken Geerts',
-    logoSrc: '/images/logos/sponsors/Logo_Tuinwerken_geerts.svg',
+    logoSrc: '/images/logos/sponsors/Logo_Tuinwerken_Geerts.svg',
     categorie: 'Sponsor VIP Friday',
   }
 ];
