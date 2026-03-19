@@ -11,13 +11,21 @@ export default function FanfareFeestenSection() {
   // Placeholder: vul gerust aan met extra fanfarelogo's
   const fanfareLogos: { name: string; src?: string }[] = [
     {
-      name: 'Iever Maakt Vooruitgang',
-      src: '/images/logos/fanfare-logo.png',
+      name: 'KF De Vrienden van ’t Recht, Blaasveld',
+      src: '/images/logos/fanfares/Logo_Fanfaars.png',
     },
-    { name: 'KF De Vrienden van ’t Recht, Blaasveld', src: '/images/logos/fanfares/Logo_Fanfaars.png' },
-    { name: 'FK De Vrolijke Vrienden, Hombeek-Heike', src: '/images/logos/fanfares/Hombeek_Heike.jpg' },
-    { name: 'K Harmonie Mechelen', src: '/images/logos/fanfares/KHM_Logo.avif' },
-    { name: 'KK Harmonie Verbroedering Rumst', src: '/images/logos/fanfares/Verbroedering_Rumst.webp' },
+    {
+      name: 'FK De Vrolijke Vrienden, Hombeek-Heike',
+      src: '/images/logos/fanfares/Hombeek_Heike.jpg',
+    },
+    {
+      name: 'K Harmonie Mechelen',
+      src: '/images/logos/fanfares/KHM_Logo.avif',
+    },
+    {
+      name: 'KK Harmonie Verbroedering Rumst',
+      src: '/images/logos/fanfares/Verbroedering_Rumst.webp',
+    },
   ];
 
   return (
@@ -98,9 +106,51 @@ export default function FanfareFeestenSection() {
                     </div>
                   </div>
 
-                  <p className='mt-3 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 sm:text-[10px] sm:tracking-[0.22em]'>
-                    (Wordt aangevuld zodra de line-up vastligt)
+                  <p className='mt-4 text-[9px] font-semibold uppercase tracking-[0.2em] text-white/85 sm:text-[10px] sm:tracking-[0.22em]'>
+                    Programma
                   </p>
+                  <ul className='mt-3 space-y-2 text-left'>
+                    <li className='flex items-start gap-3 rounded-2xl bg-white/12 px-3 py-3 backdrop-blur-sm'>
+                      <span className='min-w-[4.5rem] rounded-full bg-[#5D84C6] px-2.5 py-1 text-center text-[9px] font-extrabold uppercase tracking-[0.18em] text-white sm:text-[10px]'>
+                        12h30
+                      </span>
+                      <span className='pt-0.5 text-[11px] font-semibold leading-relaxed text-white sm:text-[12px]'>
+                        voorlopig nog open
+                      </span>
+                    </li>
+                    <li className='flex items-start gap-3 rounded-2xl bg-white/12 px-3 py-3 backdrop-blur-sm'>
+                      <span className='min-w-[4.5rem] rounded-full bg-[#5D84C6] px-2.5 py-1 text-center text-[9px] font-extrabold uppercase tracking-[0.18em] text-white sm:text-[10px]'>
+                        13h30
+                      </span>
+                      <span className='pt-0.5 text-[11px] font-semibold leading-relaxed text-white sm:text-[12px]'>
+                        KF De Vrienden van &rsquo;t Recht, Blaasveld
+                      </span>
+                    </li>
+                    <li className='flex items-start gap-3 rounded-2xl bg-white/12 px-3 py-3 backdrop-blur-sm'>
+                      <span className='min-w-[4.5rem] rounded-full bg-[#5D84C6] px-2.5 py-1 text-center text-[9px] font-extrabold uppercase tracking-[0.18em] text-white sm:text-[10px]'>
+                        14h30
+                      </span>
+                      <span className='pt-0.5 text-[11px] font-semibold leading-relaxed text-white sm:text-[12px]'>
+                        FK De Vrolijke Vrienden, Hombeek-Heike
+                      </span>
+                    </li>
+                    <li className='flex items-start gap-3 rounded-2xl bg-white/12 px-3 py-3 backdrop-blur-sm'>
+                      <span className='min-w-[4.5rem] rounded-full bg-[#5D84C6] px-2.5 py-1 text-center text-[9px] font-extrabold uppercase tracking-[0.18em] text-white sm:text-[10px]'>
+                        15h30
+                      </span>
+                      <span className='pt-0.5 text-[11px] font-semibold leading-relaxed text-white sm:text-[12px]'>
+                        K Harmonie Mechelen
+                      </span>
+                    </li>
+                    <li className='flex items-start gap-3 rounded-2xl bg-white/12 px-3 py-3 backdrop-blur-sm'>
+                      <span className='min-w-[4.5rem] rounded-full bg-[#5D84C6] px-2.5 py-1 text-center text-[9px] font-extrabold uppercase tracking-[0.18em] text-white sm:text-[10px]'>
+                        16h30
+                      </span>
+                      <span className='pt-0.5 text-[11px] font-semibold leading-relaxed text-white sm:text-[12px]'>
+                        KK Harmonie Verbroedering Rumst
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
