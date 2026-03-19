@@ -4,14 +4,17 @@ import { getGrootteClasses } from './sponsor-config';
 
 type SponsorCardProps = {
   sponsor: Sponsor;
+  index?: number;
 };
 
-export default function SponsorCard({ sponsor }: SponsorCardProps) {
+export default function SponsorCard({ sponsor, index = 0 }: SponsorCardProps) {
   const grootte = getGrootteClasses(sponsor.categorie);
+  const animationDelay = `${Math.min(index, 5) * 120}ms`;
 
   return (
     <article
-      className={`flex h-full flex-col rounded-[20px] border border-white/20 bg-white/10 p-4 ${grootte.card}`}
+      className={`block-anim flex h-full flex-col rounded-[20px] border border-white/20 bg-white/10 p-4 ${grootte.card}`}
+      style={{ animationDelay }}
     >
       <div
         className={`flex items-center justify-center rounded-[14px] px-4 ${grootte.frame}`}

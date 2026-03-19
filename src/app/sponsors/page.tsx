@@ -12,7 +12,7 @@ export default function SponsorsPage() {
       <div className="[background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22%3E%3Cfilter id=%22n%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%222%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22120%22 height=%22120%22 filter=%22url(%23n)%22 opacity=%220.55%22/%3E%3C/svg%3E')] pointer-events-none fixed inset-0 -z-20 opacity-[0.12]" />
 
       <div className='relative z-10 mx-auto w-full max-w-6xl px-6 py-10 md:py-14'>
-        <section className='rounded-[28px] bg-white/10 px-6 py-8 text-center sm:px-10'>
+        <section className='block-anim delay-1 rounded-[28px] bg-white/10 px-6 py-8 text-center sm:px-10'>
           <h1 className='text-xl font-extrabold uppercase leading-tight tracking-[0.08em] sm:text-4xl sm:tracking-[0.16em]'>
             Onze sponsors
           </h1>

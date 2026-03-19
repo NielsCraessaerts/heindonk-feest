@@ -212,6 +212,7 @@ export default function VoetbaltoernooiForm() {
               </div>
             </div>
 
+            {/* €350  */}
             <div className='mt-4 rounded-[18px] bg-white/10 px-4 py-4 sm:px-5 sm:py-5'>
               <div className='grid gap-4 md:grid-cols-[1.1fr_0.9fr] md:items-stretch'>
                 <div className='rounded-[14px] bg-white/10 px-4 py-4'>
@@ -226,7 +227,7 @@ export default function VoetbaltoernooiForm() {
                   </p>
                   <ul className='mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
                     <li>- Inschrijving ploeg met 10 deelnemers</li>
-                    <li>- 10 tickets Extra Time Party</li>
+                    <li className='text-[#F39B3A]'>- 10 tickets Extra Time Party</li>
                     <li>- 50 euro breekmunten (voor eten en drinken)</li>
                     <li>- 3 flessen water</li>
                   </ul>
@@ -276,6 +277,72 @@ export default function VoetbaltoernooiForm() {
                 </div>
               </div>
             </div>
+
+             {/* €100  */}
+            <div className='mt-4 rounded-[18px] bg-white/10 px-4 py-4 sm:px-5 sm:py-5'>
+              <div className='grid gap-4 md:grid-cols-[1.1fr_0.9fr] md:items-stretch'>
+                <div className='rounded-[14px] bg-white/10 px-4 py-4'>
+                  <p className='flex flex-col items-start gap-2 text-[11px] font-extrabold uppercase tracking-[0.14em] text-white sm:flex-row sm:items-center sm:gap-3 sm:text-[12px] sm:tracking-[0.2em]'>
+                    <span>Prijs per ploeg:</span>
+                    <span className='inline-flex shrink-0 rounded-full bg-[#F39B3A] px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.16em] text-white sm:tracking-[0.2em]'>
+                      EUR 100
+                    </span>
+                  </p>
+                  <p className='mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/80'>
+                    Inbegrepen:
+                  </p>
+                  <ul className='mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
+                    <li>- Inschrijving ploeg met 10 deelnemers</li>
+                    <li>- 50 euro breekmunten (voor eten en drinken)</li>
+                    <li>- 3 flessen water</li>
+                  </ul>
+                  <p className='mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Graag ploegnaam vermelden bij overschrijving.
+                  </p>
+                  <p className='mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Inschrijving is pas definitief na betaling en confirmatie
+                    van de organisatie.
+                  </p>
+                  <p className='mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85'>
+                    Na inschrijving van uw ploeg gelieve te betalen via
+                    overschrijving.
+                  </p>
+                </div>
+
+                <div className='flex h-full flex-col rounded-[14px] bg-[#F39B3A] px-4 py-4 text-center'>
+                  <p className='text-[10px] font-semibold uppercase tracking-[0.36em] text-white/95'>
+                    Betaling
+                  </p>
+                  <p className='mt-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/90'>
+                    Scan de QR of betaal via overschrijving
+                  </p>
+                  <div className='mt-4 flex flex-1 items-center justify-center'>
+                    <div className='h-28 w-28 overflow-hidden rounded-[16px] bg-white/20'>
+                      <Image
+                        src='/images/QR100.png'
+                        alt='QR code betaling voetbaltornooi'
+                        width={112}
+                        height={112}
+                        className='h-28 w-28 object-contain'
+                      />
+                    </div>
+                  </div>
+
+                  <div className='mt-4 rounded-[14px] border border-white/35 bg-white/20 px-4 py-3 text-left'>
+                    <p className='text-[9px] font-extrabold uppercase tracking-[0.28em] text-white/85'>
+                      Overschrijving
+                    </p>
+                    <p className='mt-2 inline-flex rounded-full bg-[#5D84C6] px-3 py-1 text-[11px] font-extrabold uppercase tracking-[0.18em] text-white'>
+                      BE70 1036 0326 7825
+                    </p>
+                    <p className='mt-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/90'>
+                      Op naam van Heindonk Feest
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className='mt-4 rounded-[14px] bg-white/10 px-5 py-4'>
               <p className='text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
                 Dj&apos;s en ambiance gedurende het tornooi

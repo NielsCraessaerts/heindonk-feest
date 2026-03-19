@@ -14,11 +14,10 @@ export default function FanfareFeestenSection() {
       name: 'Iever Maakt Vooruitgang',
       src: '/images/logos/fanfare-logo.png',
     },
-    { name: 'Fanfare 2', src: '' },
-    { name: 'Fanfare 3', src: '' },
-    { name: 'Fanfare 4', src: '' },
-    { name: 'Fanfare 5', src: '' },
-    { name: 'Fanfare 6', src: '' },
+    { name: 'KF De Vrienden van ’t Recht, Blaasveld', src: '/images/logos/fanfares/Logo_Fanfaars.png' },
+    { name: 'FK De Vrolijke Vrienden, Hombeek-Heike', src: '/images/logos/fanfares/Hombeek_Heike.jpg' },
+    { name: 'K Harmonie Mechelen', src: '/images/logos/fanfares/KHM_Logo.avif' },
+    { name: 'KK Harmonie Verbroedering Rumst', src: '/images/logos/fanfares/Verbroedering_Rumst.webp' },
   ];
 
   return (

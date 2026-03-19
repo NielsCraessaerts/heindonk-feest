@@ -80,5 +80,15 @@ export const sponsors: readonly Sponsor[] = [
     name: 'Tuinwerken Geerts',
     logoSrc: '/images/logos/sponsors/Logo_Tuinwerken_Geerts.svg',
     categorie: 'Sponsor VIP Friday',
-  }
+  },
+  {
+    name: 'CRALA',
+    logoSrc: '/images/logos/sponsors/Logo_Crala.png',
+    categorie: 'Sponsor VIP Weekend',
+  },
+  {
+    name: 'Kerremans',
+    logoSrc: '/images/logos/sponsors/Logo_Kerremans.png',
+    categorie: 'Sponsor VIP Weekend',
+  },
 ];

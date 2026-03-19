@@ -23,10 +23,11 @@ export default function SponsorsCategorySection({
         </div>
 
         <div className='mt-4 grid gap-4 lg:grid-cols-2'>
-          {items.map((sponsor) => (
+          {items.map((sponsor, index) => (
             <article
               key={sponsor.name}
-              className='rounded-[22px] border border-white/20 bg-white/10 p-5'
+              className='block-anim rounded-[22px] border border-white/20 bg-white/10 p-5'
+              style={{ animationDelay: `${Math.min(index, 5) * 140}ms` }}
             >
               <div className='flex items-center justify-center rounded-[16px] px-5 py-6'>
                 <Image
@@ -71,8 +72,8 @@ export default function SponsorsCategorySection({
       </h2>
 
       <div className='mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-        {items.map((sponsor) => (
-          <SponsorCard key={sponsor.name} sponsor={sponsor} />
+        {items.map((sponsor, index) => (
+          <SponsorCard key={sponsor.name} sponsor={sponsor} index={index} />
         ))}
       </div>
     </section>

@@ -32,10 +32,12 @@ function SponsorCard({
   sponsor,
   priority,
   size,
+  delayClass,
 }: {
   sponsor: Sponsor;
   priority: boolean;
   size: LogoSize;
+  delayClass?: string;
 }) {
   const content = (
     <>
@@ -57,7 +59,7 @@ function SponsorCard({
         href={sponsor.href}
         target='_blank'
         rel='noreferrer'
-        className={cardClassBySize[size]}
+        className={`block-anim ${delayClass ?? ''} ${cardClassBySize[size]}`}
       >
         {content}
       </a>
@@ -65,7 +67,7 @@ function SponsorCard({
   }
 
   return (
-    <div className={cardClassBySize[size]}>
+    <div className={`block-anim ${delayClass ?? ''} ${cardClassBySize[size]}`}>
       {content}
     </div>
   );
@@ -93,6 +95,7 @@ export default function SponsorCollection() {
                 sponsor={sponsor}
                 priority={index < 2}
                 size='gold'
+                delayClass={index === 0 ? 'delay-2' : 'delay-3'}
               />
             ))}
           </div>
@@ -108,6 +111,9 @@ export default function SponsorCollection() {
                 sponsor={sponsor}
                 priority={index < 2}
                 size='zilver'
+                delayClass={
+                  index === 0 ? 'delay-2' : index === 1 ? 'delay-3' : 'delay-4'
+                }
               />
             ))}
           </div>
@@ -117,12 +123,21 @@ export default function SponsorCollection() {
       {vipSponsors.length > 0 ? (
         <div>
           <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
-            {vipSponsors.map((sponsor) => (
+            {vipSponsors.map((sponsor, index) => (
               <SponsorCard
                 key={sponsor.name}
                 sponsor={sponsor}
                 priority={false}
                 size='vip'
+                delayClass={
+                  index === 0
+                    ? 'delay-2'
+                    : index === 1
+                      ? 'delay-3'
+                      : index === 2
+                        ? 'delay-4'
+                        : undefined
+                }
               />
             ))}
           </div>
