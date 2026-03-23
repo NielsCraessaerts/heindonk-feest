@@ -91,4 +91,14 @@ export const sponsors: readonly Sponsor[] = [
     logoSrc: '/images/logos/sponsors/Logo_Kerremans.png',
     categorie: 'Sponsor VIP Weekend',
   },
+    {
+    name: 'Dierenarstpraktijk De Bron',
+    logoSrc: '/images/logos/sponsors/DierenartsenpraktijkDeBron.jpeg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },
+  {
+    name: 'Apotheek De Jonghe',
+    logoSrc: '/images/logos/sponsors/Logo_ApotheekDeJonghe_Landscape.jpg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },
 ];
