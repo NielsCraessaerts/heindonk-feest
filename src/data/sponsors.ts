@@ -88,7 +88,7 @@ export const sponsors: readonly Sponsor[] = [
   },
   {
     name: 'Kerremans',
-    logoSrc: '/images/logos/sponsors/Logo_Kerremans.png',
+    logoSrc: '/images/logos/sponsors/Kerremans.png',
     categorie: 'Sponsor VIP Weekend',
   },
     {
