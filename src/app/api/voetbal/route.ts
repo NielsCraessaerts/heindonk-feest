@@ -5,6 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const schema = z.object({
   competitie: z.enum(["dames", "heren"]),
+  pakket: z.enum(["100", "350"]),
   teamnaam: z.string().min(2),
   teamverantwoordelijke: z.string().min(2),
   email: z.string().email(),
@@ -40,6 +41,16 @@ function emailShell(title: string, content: string, subtitle?: string) {
   `;
 }
 
+const packageLabels = {
+  "100": "Pakket EUR 100",
+  "350": "Pakket EUR 350",
+} as const;
+
+const packageFees = {
+  "100": "EUR 100",
+  "350": "EUR 350",
+} as const;
+
 export async function POST(req: Request) {
   try {
     const json = await req.json();
@@ -55,7 +66,8 @@ export async function POST(req: Request) {
       );
     }
 
-    const tournamentFee = "EUR 350";
+    const tournamentFee = packageFees[data.pakket];
+    const packageLabel = packageLabels[data.pakket];
     const paymentIban =
       process.env.TOURNAMENT_PAYMENT_IBAN || "BE70 1036 0326 7825";
     const paymentName = process.env.TOURNAMENT_PAYMENT_NAME || "VK Heindonk";
@@ -70,6 +82,7 @@ export async function POST(req: Request) {
           <table role="presentation" style="width:100%;border-collapse:collapse;">
             <tbody>
               <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Competitie</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#1f4e97;">${escapeHtml(data.competitie)}</td></tr>
+              <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Pakket</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(packageLabel)}</td></tr>
               <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Teamnaam</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.teamnaam)}</td></tr>
               <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Verantwoordelijke</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.teamverantwoordelijke)}</td></tr>
               <tr><td style="padding:7px 0;color:#4d6488;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">E-mail</td><td style="padding:7px 0;text-align:right;font-size:14px;font-weight:700;color:#17345f;">${escapeHtml(data.email)}</td></tr>
@@ -99,6 +112,7 @@ export async function POST(req: Request) {
         <div style="border:1px solid #dbe5f5;border-radius:12px;padding:14px 16px;background:#f7faff;">
           <p style="margin:0;font-size:13px;color:#4d6488;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;">Team</p>
           <p style="margin:8px 0 0;font-size:16px;color:#17345f;font-weight:700;">${escapeHtml(data.teamnaam)} <span style="color:#1f4e97;">(${escapeHtml(data.competitie)})</span></p>
+          <p style="margin:8px 0 0;font-size:14px;color:#17345f;">Gekozen pakket: <strong>${escapeHtml(packageLabel)}</strong></p>
         </div>
         <p style="margin:14px 0 0;font-size:14px;line-height:1.6;color:#17345f;">
           Belangrijk: jullie inschrijving is pas officieel nadat het inschrijvingsgeld werd overgeschreven en jullie een bevestigingsmail van de organisatie hebben ontvangen.

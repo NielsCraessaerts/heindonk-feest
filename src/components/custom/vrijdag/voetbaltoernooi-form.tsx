@@ -6,6 +6,9 @@ import { useState } from 'react';
 const inputClassName =
   'mt-2 w-full rounded-[14px] bg-white/90 px-4 py-3 text-sm font-semibold text-[#1F4E97] placeholder:text-[#5A6C8E] focus:outline-none';
 
+const selectClassName =
+  `${inputClassName} appearance-none border border-white/40 pr-14 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_10px_24px_-18px_rgba(15,35,74,0.95)] transition focus:border-white focus:bg-white`;
+
 const labelClassName =
   'text-[10px] font-semibold uppercase tracking-[0.32em] text-white/80';
 
@@ -25,6 +28,7 @@ export default function VoetbaltoernooiForm() {
 
     const payload = {
       competitie: String(fd.get('competitie') ?? ''),
+      pakket: String(fd.get('pakket') ?? ''),
       teamnaam: String(fd.get('teamnaam') ?? ''),
       teamverantwoordelijke: String(fd.get('teamverantwoordelijke') ?? ''),
       email: String(fd.get('email') ?? ''),
@@ -34,6 +38,7 @@ export default function VoetbaltoernooiForm() {
 
     if (
       !payload.competitie ||
+      !payload.pakket ||
       !payload.teamnaam ||
       !payload.teamverantwoordelijke ||
       !payload.email ||
@@ -41,7 +46,7 @@ export default function VoetbaltoernooiForm() {
     ) {
       setStatus('error');
       setMessage(
-        'Vul alle verplichte velden in (competitie, team, contact, mail, telefoon).'
+        'Vul alle verplichte velden in (competitie, pakket, team, contact, mail, telefoon).'
       );
       return;
     }
@@ -100,18 +105,36 @@ export default function VoetbaltoernooiForm() {
                 >
                   <label className='block md:col-span-1'>
                     <span className={labelClassName}>Competitie *</span>
-                    <select
-                      name='competitie'
-                      className={inputClassName}
-                      defaultValue=''
-                      required
-                    >
-                      <option value='' disabled>
-                        Kies dames of heren
-                      </option>
-                      <option value='dames'>Damescompetitie</option>
-                      <option value='heren'>Herencompetitie</option>
-                    </select>
+                    <div className='relative mt-2'>
+                      <select
+                        name='competitie'
+                        className={selectClassName}
+                        defaultValue=''
+                        required
+                      >
+                        <option value='' disabled>
+                          Kies dames of heren
+                        </option>
+                        <option value='dames'>Damescompetitie</option>
+                        <option value='heren'>Herencompetitie</option>
+                      </select>
+                      <div className='pointer-events-none absolute right-3 top-1/2 -translate-y-1/2'>
+                        <span className='flex h-8 w-8 items-center justify-center rounded-full bg-[#5D84C6]/18 ring-1 ring-[#5D84C6]/18 backdrop-blur-sm'>
+                          <svg
+                            aria-hidden='true'
+                            viewBox='0 0 20 20'
+                            className='h-4 w-4 text-[#1F4E97]'
+                            fill='none'
+                            stroke='currentColor'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          >
+                            <path d='m5 7 5 5 5-5' />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
                   </label>
 
                   <label className='block md:col-span-1'>
@@ -123,6 +146,40 @@ export default function VoetbaltoernooiForm() {
                       className={inputClassName}
                       required
                     />
+                  </label>
+
+                  <label className='block md:col-span-1'>
+                    <span className={labelClassName}>Pakket *</span>
+                    <div className='relative mt-2'>
+                      <select
+                        name='pakket'
+                        className={selectClassName}
+                        defaultValue=''
+                        required
+                      >
+                        <option value='' disabled>
+                          Kies je pakket
+                        </option>
+                        <option value='100'>Pakket EUR 100</option>
+                        <option value='350'>Pakket EUR 350</option>
+                      </select>
+                      <div className='pointer-events-none absolute right-3 top-1/2 -translate-y-1/2'>
+                        <span className='flex h-8 w-8 items-center justify-center rounded-full bg-[#5D84C6]/18 ring-1 ring-[#5D84C6]/18 backdrop-blur-sm'>
+                          <svg
+                            aria-hidden='true'
+                            viewBox='0 0 20 20'
+                            className='h-4 w-4 text-[#1F4E97]'
+                            fill='none'
+                            stroke='currentColor'
+                            strokeWidth='2'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                          >
+                            <path d='m5 7 5 5 5-5' />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
                   </label>
 
                   <label className='block md:col-span-1'>
