@@ -101,4 +101,18 @@ export const sponsors: readonly Sponsor[] = [
     logoSrc: '/images/logos/sponsors/Logo_ApotheekDeJonghe_Landscape.jpg',
     categorie: 'Sponsor VIP Party Friday & Saturday',
   },
+  {
+    name: 'Coruna',
+    logoSrc: '/images/logos/sponsors/Logo_Coruna.jpg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Elec Polfliet',
+    logoSrc: '/images/logos/sponsors/Logo_elec_polfliet.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Interminerals',
+    logoSrc: '/images/logos/sponsors/Logo_Interminerals.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },
+
 ];
