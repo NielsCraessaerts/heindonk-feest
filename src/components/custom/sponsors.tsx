@@ -14,7 +14,7 @@ export default function SponsorsStrip() {
   );
   const marqueeStyle = {
     ['--logo-marquee-shift' as string]: `-${100 / loopCopies}%`,
-    ['--logo-marquee-duration' as string]: '26s',
+    ['--logo-marquee-duration' as string]: '30s',
   } as CSSProperties;
 
   return (

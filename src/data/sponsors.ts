@@ -113,6 +113,14 @@ export const sponsors: readonly Sponsor[] = [
     name: 'Interminerals',
     logoSrc: '/images/logos/sponsors/Logo_Interminerals.png',
     categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Interathome',
+    logoSrc: '/images/logos/sponsors/Logo_Interathome.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Annelies',
+    logoSrc: '/images/logos/sponsors/annelies-logo.jpg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
   },
 
 ];
