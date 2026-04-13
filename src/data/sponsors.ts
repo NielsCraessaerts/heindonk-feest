@@ -129,6 +129,14 @@ export const sponsors: readonly Sponsor[] = [
     name: 'Spiessens',
     logoSrc: '/images/logos/sponsors/Logo_Spiessens.png',
     categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'De Cock Michel',
+    logoSrc: '/images/logos/sponsors/Logo_De_Cock_Michel.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Gebo',
+    logoSrc: '/images/logos/sponsors/Logo_Gebo.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
   },
 
 ];
