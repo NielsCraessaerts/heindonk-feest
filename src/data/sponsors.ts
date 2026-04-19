@@ -137,6 +137,10 @@ export const sponsors: readonly Sponsor[] = [
     name: 'Gebo',
     logoSrc: '/images/logos/sponsors/Logo_Gebo.png',
     categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Tante Luc',
+    logoSrc: '/images/logos/sponsors/Tante_Luc.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
   },
 
 ];
