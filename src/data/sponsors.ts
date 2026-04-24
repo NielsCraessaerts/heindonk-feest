@@ -141,6 +141,18 @@ export const sponsors: readonly Sponsor[] = [
     name: 'Tante Luc',
     logoSrc: '/images/logos/sponsors/Tante_Luc.png',
     categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'GeoGuedin',
+    logoSrc: '/images/logos/sponsors/Logo_GeoGuedin.jpg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Manero',
+    logoSrc: '/images/logos/sponsors/Logo_Manero.jpg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Topvelo',
+    logoSrc: '/images/logos/sponsors/Logo_Topvelo.jpg',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
   },
 
 ];
