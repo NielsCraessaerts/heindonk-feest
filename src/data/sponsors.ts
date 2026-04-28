@@ -153,6 +153,10 @@ export const sponsors: readonly Sponsor[] = [
     name: 'Topvelo',
     logoSrc: '/images/logos/sponsors/Logo_Topvelo.jpg',
     categorie: 'Sponsor VIP Party Friday & Saturday',
+  },{
+    name: 'Katelijne',
+    logoSrc: '/images/logos/sponsors/Logo_Katelijne.png',
+    categorie: 'Sponsor VIP Party Friday & Saturday',
   },
 
 ];
