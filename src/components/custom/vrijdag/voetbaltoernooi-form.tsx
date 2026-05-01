@@ -6,8 +6,7 @@ import { useState } from 'react';
 const inputClassName =
   'mt-2 w-full rounded-[14px] bg-white/90 px-4 py-3 text-sm font-semibold text-[#1F4E97] placeholder:text-[#5A6C8E] focus:outline-none';
 
-const selectClassName =
-  `${inputClassName} appearance-none border border-white/40 pr-14 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_10px_24px_-18px_rgba(15,35,74,0.95)] transition focus:border-white focus:bg-white`;
+const selectClassName = `${inputClassName} appearance-none border border-white/40 pr-14 shadow-[inset_0_1px_0_rgba(255,255,255,0.55),0_10px_24px_-18px_rgba(15,35,74,0.95)] transition focus:border-white focus:bg-white`;
 
 const labelClassName =
   'text-[10px] font-semibold uppercase tracking-[0.32em] text-white/80';
@@ -96,7 +95,7 @@ export default function VoetbaltoernooiForm() {
                   Inschrijving
                 </p>
                 <p className='mt-2 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white/85'>
-                  Aanmelden tussen 9:00 en 9:40 | start tornooi 10:00
+                  Aanmelden tussen 13:00 en 13:40 | start tornooi 14:00
                 </p>
 
                 <form
@@ -119,7 +118,7 @@ export default function VoetbaltoernooiForm() {
                         <option value='heren'>Herencompetitie</option>
                       </select>
                       <div className='pointer-events-none absolute right-3 top-1/2 -translate-y-1/2'>
-                        <span className='flex h-8 w-8 items-center justify-center rounded-full bg-[#5D84C6]/18 ring-1 ring-[#5D84C6]/18 backdrop-blur-sm'>
+                        <span className='bg-[#5D84C6]/18 ring-[#5D84C6]/18 flex h-8 w-8 items-center justify-center rounded-full ring-1 backdrop-blur-sm'>
                           <svg
                             aria-hidden='true'
                             viewBox='0 0 20 20'
@@ -164,7 +163,7 @@ export default function VoetbaltoernooiForm() {
                         <option value='350'>Pakket EUR 350</option>
                       </select>
                       <div className='pointer-events-none absolute right-3 top-1/2 -translate-y-1/2'>
-                        <span className='flex h-8 w-8 items-center justify-center rounded-full bg-[#5D84C6]/18 ring-1 ring-[#5D84C6]/18 backdrop-blur-sm'>
+                        <span className='bg-[#5D84C6]/18 ring-[#5D84C6]/18 flex h-8 w-8 items-center justify-center rounded-full ring-1 backdrop-blur-sm'>
                           <svg
                             aria-hidden='true'
                             viewBox='0 0 20 20'
@@ -284,7 +283,9 @@ export default function VoetbaltoernooiForm() {
                   </p>
                   <ul className='mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-white/90'>
                     <li>- Inschrijving ploeg met 10 deelnemers</li>
-                    <li className='text-[#F39B3A] text-lg'>- 10 tickets Extra Time Party</li>
+                    <li className='text-lg text-[#F39B3A]'>
+                      - 10 tickets Extra Time Party
+                    </li>
                     <li>- 50 euro breekmunten (voor eten en drinken)</li>
                     <li>- 3 flessen water</li>
                   </ul>
@@ -335,7 +336,7 @@ export default function VoetbaltoernooiForm() {
               </div>
             </div>
 
-             {/* €100  */}
+            {/* €100  */}
             <div className='mt-4 rounded-[18px] bg-white/10 px-4 py-4 sm:px-5 sm:py-5'>
               <div className='grid gap-4 md:grid-cols-[1.1fr_0.9fr] md:items-stretch'>
                 <div className='rounded-[14px] bg-white/10 px-4 py-4'>
